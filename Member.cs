@@ -116,8 +116,8 @@ namespace MIS220GroupProject
 
                 dbCon.Open();
                 //expected result from scope_identity query
-                Int32 scopeID = Convert.ChangeType(cmdIns.ExecuteScalar()), typeof(Int32);
-                return Convert.ToInt32(scopeID);
+                Int32 scopeID = Convert.ToInt32(cmdIns.ExecuteScalar());
+                return scopeID;
 
                 
             }
