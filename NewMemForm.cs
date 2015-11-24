@@ -14,8 +14,8 @@ namespace MIS220GroupProject
     {   
         
         //----------Members--------------
-        public Member thisMember; //public so can be used throughout the program
-        public Login thisLogin; //public so can be used throughout the program
+        private Member thisMember; 
+        private Login thisLogin; 
         //private MemberDL thisMemberDL;
         
 

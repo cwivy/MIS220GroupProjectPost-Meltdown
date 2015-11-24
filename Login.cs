@@ -9,7 +9,7 @@ using System.Data;
 namespace MIS220GroupProject
 {
     public class Login
-    {
+    {        
         private string username;
         private int memberID;
         private string password;
@@ -71,5 +71,6 @@ namespace MIS220GroupProject
             }            
         }//End createLogin
 
+        
     }
 }
