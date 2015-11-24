@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIS220GroupProject", "MIS220GroupProject.csproj", "{1AAC95EE-8499-4E84-BA13-3F3308F38F78}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0436146-66C2-4976-B377-6DB34A8AB8EF}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Visual Studio 2013\Projects\christianGetsinger.EX4\christianGetsinger.EX4\christianGetsinger.EX4.csproj = ..\..\Visual Studio 2013\Projects\christianGetsinger.EX4\christianGetsinger.EX4\christianGetsinger.EX4.csproj
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "christianGetsinger.EX4", "..\..\Visual Studio 2013\Projects\christianGetsinger.EX4\christianGetsinger.EX4\christianGetsinger.EX4.csproj", "{D2D9C954-76BD-4542-887B-EE953C463003}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AAC95EE-8499-4E84-BA13-3F3308F38F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAC95EE-8499-4E84-BA13-3F3308F38F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAC95EE-8499-4E84-BA13-3F3308F38F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAC95EE-8499-4E84-BA13-3F3308F38F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D9C954-76BD-4542-887B-EE953C463003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D9C954-76BD-4542-887B-EE953C463003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D9C954-76BD-4542-887B-EE953C463003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D9C954-76BD-4542-887B-EE953C463003}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
