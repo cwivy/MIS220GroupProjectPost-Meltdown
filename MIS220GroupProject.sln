@@ -6,9 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MIS220GroupProject", "MIS220GroupProject.csproj", "{1AAC95EE-8499-4E84-BA13-3F3308F38F78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0436146-66C2-4976-B377-6DB34A8AB8EF}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Visual Studio 2013\Projects\christianGetsinger.EX4\christianGetsinger.EX4\christianGetsinger.EX4.csproj = ..\..\Visual Studio 2013\Projects\christianGetsinger.EX4\christianGetsinger.EX4\christianGetsinger.EX4.csproj
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
