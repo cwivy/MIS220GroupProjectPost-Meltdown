@@ -52,6 +52,7 @@
     <Compile Include="AdminHome.Designer.cs">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="AggActiveAccount.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>

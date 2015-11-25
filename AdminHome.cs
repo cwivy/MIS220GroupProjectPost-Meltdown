@@ -15,6 +15,7 @@ namespace MIS220GroupProject
         public AdminHome()
         {
             InitializeComponent();
+            //adminNameBox.Text =
         }
     }
 }
