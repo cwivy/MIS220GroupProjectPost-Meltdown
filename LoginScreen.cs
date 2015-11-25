@@ -42,7 +42,6 @@ namespace MIS220GroupProject
                 string isAdminString = Convert.ToString(memberInfo["IsAdmin"]);
                 if (LoginIDString == MemberIDString & isAdminString != "True")
                 {
-
                     this.Hide();
                     new MemberHome().Show();
                 }
