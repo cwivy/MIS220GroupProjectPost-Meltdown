@@ -160,6 +160,23 @@ namespace MIS220GroupProject
 
         }
 
+        public Member PouplateMember(DataRow memTable)
+        {
+            Member mem = new Member();
+            mem.Id = Convert.ToInt32(Convert.ToString(memTable["MemberID"]));
+            //mem.AccId = 
+            mem.FName = Convert.ToString(memTable["First Name"]);
+            mem.LName = Convert.ToString(memTable["Last Name"]);
+            mem.Address1 = Convert.ToString(memTable["Address1"]);
+            mem.Address2 = Convert.ToString(memTable["Address2"]);
+            mem.Phone = Convert.ToString(memTable["Phone"]);
+            mem.City = Convert.ToString(memTable["City"]);
+            mem.State = Convert.ToString(memTable["State"]);
+            mem.zip = Convert.ToInt32(Convert.ToString(memTable["zip"]));
+            mem.dateOfBirth = Convert.ToDateTime(memTable["DOB"]); //check this one
+            return mem;
+        }
+
         public Member Select(int MemID)
         {
             string sqlText;
@@ -255,6 +272,8 @@ namespace MIS220GroupProject
 
             return member;
         }
+
+        //Carlton: reminder Create Pop up window that outputs a member object for testing purposes
     }
 
 }
