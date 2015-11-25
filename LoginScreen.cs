@@ -42,29 +42,24 @@ namespace MIS220GroupProject
                 DataRow memberInfo = memberDataSet.Tables[0].Rows[0];
                 string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
                 string MemIDString = Convert.ToString(memberInfo["MemID"]);
-                string isAdminInt = Convert.ToString(memberInfo["IsAdmin"]);
-                if (MemIDString == MemberIDString && isAdminInt != "1" && stepInto == true)
+                string isAdminString = Convert.ToString(memberInfo["IsAdmin"]);
+                if (MemIDString == MemberIDString & isAdminString != "True" & stepInto == true)
                 {
 
                     this.Hide();
                     new MemberHome().Show();
                 }
-                else if (MemIDString == MemberIDString && isAdminInt == "1" && stepInto == true)
+                else if (MemIDString == MemberIDString & isAdminString == "True" & stepInto == true)
                 {
                     this.Hide();
                     new AdminHome().Show();
                 }
-            }            
-
-            
+            }          
+                        
         }
 
         private void createAccount_BTN_Click(object sender, EventArgs e)
         {
-            //NewMemForm form = new NewMemForm();
-            //form.ShowDialog();
-            //this.Close();
-
             this.Hide();
             new NewMemForm().Show();
         }
