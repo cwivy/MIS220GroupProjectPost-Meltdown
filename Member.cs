@@ -87,12 +87,12 @@ namespace MIS220GroupProject
             //SQL Statement for creating new member
             string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
                             "VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
-                //SQL returns auto-implemented memID used to create corresponding login
+            //SQL returns auto-implemented memID used to create corresponding login
                             "select SCOPE_IDENTITY();";
 
 
             //Establishes connection with SQL DB
-            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);
 
 
@@ -129,6 +129,24 @@ namespace MIS220GroupProject
             }
         }
  
+        public void CreateMemberDataTable(string userName, string password)
+        {
+            //SQL Statement for creating new member
+            string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
+            " set @userName = '" + userName + "' set @password = '" + password + "'" +
+            "select *from Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+
+            }
+
+        }
+
         public Member Select(int MemID)
         {
             string sqlText;
