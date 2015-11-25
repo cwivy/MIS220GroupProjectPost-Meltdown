@@ -129,7 +129,7 @@ namespace MIS220GroupProject
             }
         }
  
-        public void CreateMemberDataTable(string userName, string password)
+        public DataSet CreateMemberDataTable(string userName, string password)
         {
             //SQL Statement for creating new member
             string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
@@ -142,7 +142,20 @@ namespace MIS220GroupProject
 
             try
             {
-
+                DataSet memberDataSet = new DataSet();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+                {
+                    cmd.Connection.Open();
+                    DataTable memberTable = new DataTable();
+                    memberTable.Load(cmd.ExecuteReader());
+                    //string tableName = "MemberInfoTable";
+                    memberDataSet.Tables.Add(memberTable);
+                }
+                return memberDataSet;
+            }
+            finally
+            {
+                dbCon.Close();
             }
 
         }

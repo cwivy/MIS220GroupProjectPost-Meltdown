@@ -12,6 +12,10 @@ namespace MIS220GroupProject
 {
     public partial class LoginScreen : Form
     {
+        //Members--------------------------
+        private Member thisMember;
+        private Login thisLogin;
+        //constructors-------------------
         public LoginScreen()
         {
             InitializeComponent();
@@ -19,19 +23,40 @@ namespace MIS220GroupProject
 
         private void login_BTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            if (loginUserBox.Text.ToString() != "admin")
+            bool stepInto = false;
+            thisMember = new Member();
+            thisLogin = new Login();
+            DataSet memberDataSet = new DataSet();
+            memberDataSet = thisMember.CreateMemberDataTable(loginUserBox.Text, loginPassBox.Text);
+
+            
+            if (memberDataSet.Tables["Table1"].Rows.Count == 0)
             {
-                MemberHome form = new MemberHome();
-                form.ShowDialog();
-                this.Close();
+                MessageBox.Show("This username and password pair is invalid. Please check that you have the correct information");                
+                loginPassBox.Text = " ";
+                stepInto = false;
             }
             else
             {
-                AdminHome aForm = new AdminHome();
-                aForm.ShowDialog();
-                this.Close();
-            }
+                stepInto = true;
+                DataRow memberInfo = memberDataSet.Tables[0].Rows[0];
+                string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
+                string MemIDString = Convert.ToString(memberInfo["MemID"]);
+                string isAdminInt = Convert.ToString(memberInfo["IsAdmin"]);
+                if (MemIDString == MemberIDString && isAdminInt != "1" && stepInto == true)
+                {
+
+                    this.Hide();
+                    new MemberHome().Show();
+                }
+                else if (MemIDString == MemberIDString && isAdminInt == "1" && stepInto == true)
+                {
+                    this.Hide();
+                    new AdminHome().Show();
+                }
+            }            
+
+            
         }
 
         private void createAccount_BTN_Click(object sender, EventArgs e)
