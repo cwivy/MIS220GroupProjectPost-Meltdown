@@ -22,8 +22,7 @@ namespace MIS220GroupProject
         }
 
         private void login_BTN_Click(object sender, EventArgs e)
-        {
-            bool stepInto = false;
+        {            
             thisMember = new Member();
             thisLogin = new Login();
             DataSet memberDataSet = new DataSet();
@@ -33,23 +32,21 @@ namespace MIS220GroupProject
             if (memberDataSet.Tables["Table1"].Rows.Count == 0)
             {
                 MessageBox.Show("This username and password pair is invalid. Please check that you have the correct information");                
-                loginPassBox.Text = " ";
-                stepInto = false;
+                loginPassBox.Text = " ";                
             }
             else
-            {
-                stepInto = true;
+            {                
                 DataRow memberInfo = memberDataSet.Tables[0].Rows[0];
                 string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
-                string MemIDString = Convert.ToString(memberInfo["MemID"]);
+                string LoginIDString = Convert.ToString(memberInfo["MemID"]);
                 string isAdminString = Convert.ToString(memberInfo["IsAdmin"]);
-                if (MemIDString == MemberIDString & isAdminString != "True" & stepInto == true)
+                if (LoginIDString == MemberIDString & isAdminString != "True")
                 {
 
                     this.Hide();
                     new MemberHome().Show();
                 }
-                else if (MemIDString == MemberIDString & isAdminString == "True" & stepInto == true)
+                else if (LoginIDString == MemberIDString & isAdminString == "True")
                 {
                     this.Hide();
                     new AdminHome().Show();

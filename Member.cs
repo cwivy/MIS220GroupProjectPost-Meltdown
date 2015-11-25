@@ -134,7 +134,7 @@ namespace MIS220GroupProject
             //SQL Statement for creating new member
             string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
             " set @userName = '" + userName + "' set @password = '" + password + "'" +
-            "select *from Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
+            "SELECT * FROM Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
 
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
