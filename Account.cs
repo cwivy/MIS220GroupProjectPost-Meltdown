@@ -53,6 +53,7 @@ namespace MIS220GroupProject
             set { paymentType = value; }
         }
         
-        
+        //Carlton: reminder Create a function for pop up message to display account information AND one that will
+        //populate an object with information from a DataTable just like in Member
     }
 }

@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace MIS220GroupProject
 {
     public class Member : Account
     {
+
+        //--------Members-------------
         private int id;
         private string fName;
         private string lName;
@@ -21,7 +24,7 @@ namespace MIS220GroupProject
         private int zip;
         private DateTime dateOfBirth;
 
-       
+       //----------Properties------------
         public int Id
         {
             get { return id; }
@@ -81,6 +84,25 @@ namespace MIS220GroupProject
             set { dateOfBirth = value; }
         }
 
+        //--------Constructors-------------
+
+        //Use this when you want to test something with a member and dont want to deal with SQL
+        //I will also create an Account constructor to go with it
+        public Member()
+        {
+            this.Id = 1337;
+            this.AccId = 1969;
+            this.FName = "Nicholas";
+            this.LName = "Cage";
+            this.DateOfBirth = Convert.ToDateTime("10-14-1978");
+            this.Address1 = "555 Cage Drive";
+            this.Address2 = "555 Declaration of Independence Lane";
+            this.City = "Washington D.C.";
+            this.State = "NA";
+            this.Zip = 55555;
+            this.Phone = "(555) 123-4567";
+        }
+
 
         public int CreateAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
         {
@@ -132,9 +154,12 @@ namespace MIS220GroupProject
         public DataSet CreateMemberDataTable(string userName, string password)
         {
             //SQL Statement for creating new member
-            string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
-            " set @userName = '" + userName + "' set @password = '" + password + "'" +
-            "SELECT * FROM Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
+            //Carlton: I tried to make this more readable for my sake, I sincerely hope I didn't fuck it up lol, delete this comment if it's fine
+            string sqlQuery = "DECLARE @userName varchar(50), @password varchar(50)" +
+            "SET @userName = '" + userName + "' SET @password = '" + password + "'" +
+            "SELECT * " +
+            "FROM Login l, Member m " +
+            "WHERE l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
 
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
@@ -160,23 +185,23 @@ namespace MIS220GroupProject
 
         }
 
-        public Member PouplateMember(DataRow memTable)
+        public void PopulateMember(DataRow memTable)
         {
-            Member mem = new Member();
-            mem.Id = Convert.ToInt32(Convert.ToString(memTable["MemberID"]));
-            //mem.AccId = 
-            mem.FName = Convert.ToString(memTable["First Name"]);
-            mem.LName = Convert.ToString(memTable["Last Name"]);
-            mem.Address1 = Convert.ToString(memTable["Address1"]);
-            mem.Address2 = Convert.ToString(memTable["Address2"]);
-            mem.Phone = Convert.ToString(memTable["Phone"]);
-            mem.City = Convert.ToString(memTable["City"]);
-            mem.State = Convert.ToString(memTable["State"]);
-            mem.zip = Convert.ToInt32(Convert.ToString(memTable["zip"]));
-            mem.dateOfBirth = Convert.ToDateTime(memTable["DOB"]); //check this one
-            return mem;
+            this.Id = Convert.ToInt32(Convert.ToString(memTable["MemID"]));
+            //mem.AccId = Convert.ToInt32(Convert.ToString(memTable["AccountID"]));
+            this.FName = Convert.ToString(memTable["FirstName"]);
+            this.LName = Convert.ToString(memTable["LastName"]);
+            this.Address1 = Convert.ToString(memTable["Address1"]);
+            this.Address2 = Convert.ToString(memTable["Address2"]);
+            this.Phone = Convert.ToString(memTable["Phone"]);
+            this.City = Convert.ToString(memTable["City"]);
+            this.State = Convert.ToString(memTable["State"]);
+            this.zip = Convert.ToInt32(Convert.ToString(memTable["Zip"]));
+            this.dateOfBirth = Convert.ToDateTime(memTable["DOB"]); 
         }
 
+        //I'm considering getting rid of this since we have the DataTable and Populate functions that do this in less
+        //lines of code. I think that's more efficient, idk though.
         public Member Select(int MemID)
         {
             string sqlText;
@@ -273,7 +298,22 @@ namespace MIS220GroupProject
             return member;
         }
 
-        //Carlton: reminder Create Pop up window that outputs a member object for testing purposes
+        //Creates a pop up box that just outputs the information in a member object in an easily readable way
+        //Mostly just for testing purposes
+        public void DisplayMember()
+        {
+            MessageBox.Show("MemberID: " + this.Id + "\n" +
+                            "AccountID: " + this.AccId + "\n" +
+                            "First Name: " + this.FName + "\n" +
+                            "Last Name: " + this.LName + "\n" +
+                            "Address1: " + this.Address1 + "\n" +
+                            "Address2: " + this.Address2 + "\n" +
+                            "Phone: " + this.Phone + "\n" +
+                            "City: " + this.City + "\n" +
+                            "State: " + this.State + "\n" +
+                            "Zip: " + this.Zip + "\n" +
+                            "DOB: " + this.dateOfBirth + "\n");
+        }
     }
 
 }
