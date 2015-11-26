@@ -15,7 +15,8 @@ namespace MIS220GroupProject
         
         //----------Members--------------
         private Member thisMember; 
-        private Login thisLogin; 
+        private Login thisLogin;
+        private AggActiveAccount thisAGG;
         //private MemberDL thisMemberDL;
         
 
@@ -75,7 +76,7 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(thisMember.DateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            int scopeID = thisMember.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
+            int scopeID = thisAGG.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
             thisLogin.CreateLogin(thisLogin.Username, thisLogin.Password, scopeID);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");

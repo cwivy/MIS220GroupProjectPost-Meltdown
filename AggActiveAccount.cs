@@ -107,6 +107,54 @@ namespace MIS220GroupProject
             get { return isAdmin; }
             set { isAdmin = value; }
         }
+
+        public int CreateAggActiveAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
+        {
+            //SQL Statement for creating new member
+            string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
+                            "VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
+                //SQL returns auto-implemented memID used to create corresponding login
+                            "select SCOPE_IDENTITY();";
+
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+
+            try
+            {
+                //non-query
+                SqlCommand cmdIns = new SqlCommand(sqlIns, dbCon);
+                cmdIns.Parameters.AddWithValue("@firstName", fName);
+                cmdIns.Parameters.AddWithValue("@lastName", lName);
+                cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
+                cmdIns.Parameters.AddWithValue("@address1", address1);
+                cmdIns.Parameters.AddWithValue("@address2", address2);
+                cmdIns.Parameters.AddWithValue("@city", city);
+                cmdIns.Parameters.AddWithValue("@state", state);
+                cmdIns.Parameters.AddWithValue("@zip", zip);
+                cmdIns.Parameters.AddWithValue("@phone", phone);
+
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;
+
+                dbCon.Open();
+                //expected result from scope_identity query
+                Int32 scopeID = Convert.ToInt32(cmdIns.ExecuteScalar());
+                return scopeID;
+
+
+            }
+
+            //catch(Exception ex)//need to write exceptions
+            finally
+            {
+                dbCon.Close();
+            }
+        }
+
         public DataSet CreateAggDataTable(string userName, string password)
         {
             //SQL Statement for creating new member
