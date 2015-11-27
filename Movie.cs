@@ -15,6 +15,7 @@ namespace MIS220GroupProject
         private double runtime;
         private double rating;
         private DateTime dateForRent;
+        private double rentalPrice;
 
         public DateTime DateForRent
         {
@@ -56,6 +57,11 @@ namespace MIS220GroupProject
         {
             get { return runtime; }
             set { runtime = value; }
+        }
+        public double RentalPrice
+        {
+            get { return rentalPrice; }
+            set { rentalPrice = value; }
         }
     }
 }

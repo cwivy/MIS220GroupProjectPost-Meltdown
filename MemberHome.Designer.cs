@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(319, 27);
+            this.label1.Location = new System.Drawing.Point(26, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             this.accBalBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.accBalBox.Font = new System.Drawing.Font("Segoe WP", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accBalBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.accBalBox.Location = new System.Drawing.Point(29, 56);
+            this.accBalBox.Location = new System.Drawing.Point(330, 25);
             this.accBalBox.Name = "accBalBox";
             this.accBalBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.accBalBox.Size = new System.Drawing.Size(149, 76);
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 37);
+            this.label2.Location = new System.Drawing.Point(330, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 2;
@@ -72,16 +72,17 @@
             // 
             // toMovieList_BTN
             // 
-            this.toMovieList_BTN.Location = new System.Drawing.Point(29, 354);
+            this.toMovieList_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toMovieList_BTN.Location = new System.Drawing.Point(12, 354);
             this.toMovieList_BTN.Name = "toMovieList_BTN";
-            this.toMovieList_BTN.Size = new System.Drawing.Size(189, 73);
+            this.toMovieList_BTN.Size = new System.Drawing.Size(206, 73);
             this.toMovieList_BTN.TabIndex = 3;
-            this.toMovieList_BTN.Text = "View Movies!";
+            this.toMovieList_BTN.Text = "View and Order Movies!";
             this.toMovieList_BTN.UseVisualStyleBackColor = true;
             // 
             // toAcctInfoScreen_BTN
             // 
-            this.toAcctInfoScreen_BTN.Location = new System.Drawing.Point(322, 86);
+            this.toAcctInfoScreen_BTN.Location = new System.Drawing.Point(29, 74);
             this.toAcctInfoScreen_BTN.Name = "toAcctInfoScreen_BTN";
             this.toAcctInfoScreen_BTN.Size = new System.Drawing.Size(102, 23);
             this.toAcctInfoScreen_BTN.TabIndex = 4;
@@ -108,7 +109,7 @@
             // 
             // toPaymentScreen_BTN
             // 
-            this.toPaymentScreen_BTN.Location = new System.Drawing.Point(444, 85);
+            this.toPaymentScreen_BTN.Location = new System.Drawing.Point(151, 73);
             this.toPaymentScreen_BTN.Name = "toPaymentScreen_BTN";
             this.toPaymentScreen_BTN.Size = new System.Drawing.Size(112, 23);
             this.toPaymentScreen_BTN.TabIndex = 7;
@@ -129,7 +130,7 @@
             this.memNameBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.memNameBox.Font = new System.Drawing.Font("Segoe WP", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.memNameBox.Location = new System.Drawing.Point(362, 37);
+            this.memNameBox.Location = new System.Drawing.Point(69, 25);
             this.memNameBox.Name = "memNameBox";
             this.memNameBox.Size = new System.Drawing.Size(130, 31);
             this.memNameBox.TabIndex = 9;
@@ -139,7 +140,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 451);
+            this.ClientSize = new System.Drawing.Size(497, 443);
             this.Controls.Add(this.memNameBox);
             this.Controls.Add(this.toRewardScreen_BTN);
             this.Controls.Add(this.toPaymentScreen_BTN);
