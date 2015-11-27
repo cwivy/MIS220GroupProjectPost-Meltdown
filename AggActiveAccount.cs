@@ -248,7 +248,6 @@ namespace MIS220GroupProject
             {
                 dbCon.Close();
             }
-
         }
     
     }

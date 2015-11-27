@@ -27,7 +27,7 @@ namespace MIS220GroupProject
             //passes the username and password from the form to check the SQL database for a match
             memberDataSet = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
 
-            
+            //if a row is not returned is the dataset then the username/password pair does not exist
             if (memberDataSet.Tables["Table1"].Rows.Count == 0)
             {
                 MessageBox.Show("This username and password pair is invalid. Please check that you have the correct information");                
