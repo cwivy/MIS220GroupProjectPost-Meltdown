@@ -108,7 +108,7 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
-        public int CreateNewProfile(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
+        public int CreateNewProfile(string memStatus, string balance, string cardNumber, string paymentType, string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth, string userName, string password)
         {           
             //SQL Statement for creating new member
             string sqlProfileCreate =
@@ -134,6 +134,7 @@ namespace MIS220GroupProject
             {
                 //non-query
                 SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
+                cmdIns.Parameters.AddWithValue
                 cmdIns.Parameters.AddWithValue("@firstName", fName);
                 cmdIns.Parameters.AddWithValue("@lastName", lName);
                 cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
