@@ -9,7 +9,7 @@ using System.Data;
 namespace MIS220GroupProject
 {
     public class Member : Account
-    {
+    {        
         private int id;
         private string fName;
         private string lName;
@@ -20,6 +20,7 @@ namespace MIS220GroupProject
         private string state;
         private int zip;
         private DateTime dateOfBirth;
+        
 
        
         public int Id
@@ -84,36 +85,36 @@ namespace MIS220GroupProject
 
         
  
-        public DataSet CreateMemberDataTable(string userName, string password)
-        {
-            //SQL Statement for creating new member
-            string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
-            " set @userName = '" + userName + "' set @password = '" + password + "'" +
-            "SELECT * FROM Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
+        //public DataSet CreateMemberDataTable(string userName, string password)
+        //{
+        //    //SQL Statement for creating new member
+        //    string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
+        //    " set @userName = '" + userName + "' set @password = '" + password + "'" +
+        //    "SELECT * FROM Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
 
-            //Establishes connection with SQL DB
-            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-            SqlConnection dbCon = new SqlConnection(dbStr);
+        //    //Establishes connection with SQL DB
+        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+        //    SqlConnection dbCon = new SqlConnection(dbStr);
 
-            try
-            {
-                DataSet memberDataSet = new DataSet();
-                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
-                {
-                    cmd.Connection.Open();
-                    DataTable memberTable = new DataTable();
-                    memberTable.Load(cmd.ExecuteReader());
-                    //string tableName = "MemberInfoTable";
-                    memberDataSet.Tables.Add(memberTable);
-                }
-                return memberDataSet;
-            }
-            finally
-            {
-                dbCon.Close();
-            }
+        //    try
+        //    {
+        //        DataSet memberDataSet = new DataSet();
+        //        using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+        //        {
+        //            cmd.Connection.Open();
+        //            DataTable memberTable = new DataTable();
+        //            memberTable.Load(cmd.ExecuteReader());
+        //            //string tableName = "MemberInfoTable";
+        //            memberDataSet.Tables.Add(memberTable);
+        //        }
+        //        return memberDataSet;
+        //    }
+        //    finally
+        //    {
+        //        dbCon.Close();
+        //    }
 
-        }
+        //}
 
         public Member PouplateMember(DataRow memTable)
         {

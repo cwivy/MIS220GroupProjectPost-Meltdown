@@ -39,7 +39,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.firstNameBox = new System.Windows.Forms.TextBox();
             this.zipBox = new System.Windows.Forms.TextBox();
-            this.stateBox = new System.Windows.Forms.TextBox();
             this.cityBox = new System.Windows.Forms.TextBox();
             this.address2Box = new System.Windows.Forms.TextBox();
             this.address1Box = new System.Windows.Forms.TextBox();
@@ -55,6 +54,7 @@
             this.cardNumberBox = new System.Windows.Forms.TextBox();
             this.cardTypeLabel = new System.Windows.Forms.Label();
             this.cardTypeDropBox = new System.Windows.Forms.ComboBox();
+            this.stateComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -114,7 +114,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(296, 250);
+            this.label7.Location = new System.Drawing.Point(296, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 6;
@@ -148,19 +148,11 @@
             // 
             // zipBox
             // 
-            this.zipBox.Location = new System.Drawing.Point(359, 217);
+            this.zipBox.Location = new System.Drawing.Point(359, 220);
             this.zipBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.zipBox.Name = "zipBox";
             this.zipBox.Size = new System.Drawing.Size(100, 22);
             this.zipBox.TabIndex = 7;
-            // 
-            // stateBox
-            // 
-            this.stateBox.Location = new System.Drawing.Point(359, 187);
-            this.stateBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.stateBox.Name = "stateBox";
-            this.stateBox.Size = new System.Drawing.Size(100, 22);
-            this.stateBox.TabIndex = 6;
             // 
             // cityBox
             // 
@@ -196,7 +188,7 @@
             // 
             // phoneNumBox
             // 
-            this.phoneNumBox.Location = new System.Drawing.Point(359, 246);
+            this.phoneNumBox.Location = new System.Drawing.Point(359, 251);
             this.phoneNumBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.phoneNumBox.Name = "phoneNumBox";
             this.phoneNumBox.Size = new System.Drawing.Size(100, 22);
@@ -224,7 +216,7 @@
             // userNameBox
             // 
             this.userNameBox.Location = new System.Drawing.Point(96, 36);
-            this.userNameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.userNameBox.Name = "userNameBox";
             this.userNameBox.Size = new System.Drawing.Size(132, 22);
             this.userNameBox.TabIndex = 22;
@@ -242,7 +234,7 @@
             // passwordBox
             // 
             this.passwordBox.Location = new System.Drawing.Point(96, 69);
-            this.passwordBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(132, 22);
             this.passwordBox.TabIndex = 24;
@@ -300,11 +292,74 @@
             this.cardTypeDropBox.TabIndex = 29;
             this.cardTypeDropBox.SelectedIndexChanged += new System.EventHandler(this.cardTypeDropBox_SelectedIndexChanged);
             // 
+            // stateComboBox
+            // 
+            this.stateComboBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.stateComboBox.FormattingEnabled = true;
+            this.stateComboBox.Items.AddRange(new object[] {
+            "Alabama",
+            "Alaska",
+            "Arizona",
+            "Arkansas",
+            "California",
+            "Colorado",
+            "Connecticut",
+            "Delaware",
+            "District Of Columbia",
+            "Florida",
+            "Georgia",
+            "Hawaii",
+            "Idaho",
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Kentucky",
+            "Louisiana",
+            "Maine",
+            "Maryland",
+            "Massachusetts",
+            "Michigan",
+            "Minnesota",
+            "Mississippi",
+            "Missouri",
+            "Montana",
+            "Nebraska",
+            "Nevada",
+            "New Hampshire",
+            "New Jersey",
+            "New Mexico",
+            "New York",
+            "North Carolina",
+            "North Dakota",
+            "Ohio",
+            "Oklahoma",
+            "Oregon",
+            "Pennsylvania",
+            "Rhode Island",
+            "South Carolina",
+            "South Dakota",
+            "Tennessee",
+            "Texas",
+            "Utah",
+            "Vermont",
+            "Virginia",
+            "Washington",
+            "West Virginia",
+            "Wisconsin",
+            "Wyoming"});
+            this.stateComboBox.Location = new System.Drawing.Point(359, 188);
+            this.stateComboBox.MaxDropDownItems = 50;
+            this.stateComboBox.Name = "stateComboBox";
+            this.stateComboBox.Size = new System.Drawing.Size(121, 24);
+            this.stateComboBox.TabIndex = 30;
+            // 
             // NewMemForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 295);
+            this.Controls.Add(this.stateComboBox);
             this.Controls.Add(this.cardTypeDropBox);
             this.Controls.Add(this.cardTypeLabel);
             this.Controls.Add(this.cardNumberBox);
@@ -320,7 +375,6 @@
             this.Controls.Add(this.address1Box);
             this.Controls.Add(this.address2Box);
             this.Controls.Add(this.cityBox);
-            this.Controls.Add(this.stateBox);
             this.Controls.Add(this.zipBox);
             this.Controls.Add(this.firstNameBox);
             this.Controls.Add(this.label11);
@@ -332,7 +386,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "NewMemForm";
             this.Text = "Create New Account";
             this.ResumeLayout(false);
@@ -353,7 +407,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox firstNameBox;
         private System.Windows.Forms.TextBox zipBox;
-        private System.Windows.Forms.TextBox stateBox;
         private System.Windows.Forms.TextBox cityBox;
         private System.Windows.Forms.TextBox address2Box;
         private System.Windows.Forms.TextBox address1Box;
@@ -369,6 +422,7 @@
         private System.Windows.Forms.TextBox cardNumberBox;
         private System.Windows.Forms.Label cardTypeLabel;
         private System.Windows.Forms.ComboBox cardTypeDropBox;
+        private System.Windows.Forms.ComboBox stateComboBox;
     }
 }
 

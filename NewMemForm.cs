@@ -11,37 +11,57 @@ using System.Windows.Forms;
 namespace MIS220GroupProject
 {
     public partial class NewMemForm : Form
-    {   
-        
-        //----------Members--------------
-        private Member thisMember; 
-        private Login thisLogin;
+    {
+        //member variables
+        private int id;
+        private string fName;
+        private string lName;
+        private string address1;
+        private string address2;
+        private string phone;
+        private string city;
+        private string state;
+        private int zip;
+        private DateTime dateOfBirth;
+        //account variables
+        private int accId;
+        private int cardNum;
+        private double balance;
+        private List<int> rentalsHeld;
+        private string memStatus;
+        private int paymentType;
+        //login variables
+        private string username;
+        private int memberID;
+        private string password;
+        private bool isAdmin;
+
+        //----------Members--------------        
         private AggActiveAccount thisAGG;
-        //private MemberDL thisMemberDL;
-        
+                
 
         //-------Constructors------------
         public NewMemForm()
         {
-            thisMember = new Member();
-            thisMember = new Member();
-            thisLogin = new Login();
+            thisAGG = new AggActiveAccount();
             InitializeComponent();
         }
 
         //----------Methods--------------
-        private void CopyFormToObject()
-        {
-            thisMember.FName = firstNameBox.Text.ToString();
-            thisMember.LName = lastNameBox.Text.ToString();
-            thisMember.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
-            thisMember.Address1 = address1Box.Text.ToString();
-            thisMember.Address2 = address2Box.Text.ToString();
-            thisMember.City = cityBox.Text.ToString();
-            thisMember.State = stateBox.Text.ToString();
-            thisMember.Zip = Convert.ToInt32(zipBox.Text);
-            thisMember.Phone = Convert.ToString(phoneNumBox);
-        }
+        //private void CopyFormToObject()
+        //{
+        //    thisAGG.FName = firstNameBox.Text.ToString();
+        //    thisAGG.LName = lastNameBox.Text.ToString();
+        //    thisAGG.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
+        //    thisAGG.Address1 = address1Box.Text.ToString();
+        //    thisAGG.Address2 = address2Box.Text.ToString();
+        //    thisAGG.City = cityBox.Text.ToString();
+        //    thisAGG.State = stateComboBox.Text.ToString();
+        //    thisAGG.Zip = Convert.ToInt32(zipBox.Text);
+        //    thisAGG.Phone = Convert.ToString(phoneNumBox);
+        //    thisAGG.Username = userNameBox.Text;
+        //    thisAGG.Password = passwordBox.Text;
+        //}
 
         private void ClearTextBoxes()
         {
@@ -51,31 +71,37 @@ namespace MIS220GroupProject
             address1Box.Text = " ";
             address2Box.Text = " ";
             cityBox.Text = " ";
-            stateBox.Text = " ";
+            stateComboBox.Text = " ";
             zipBox.Text = " ";
             phoneNumBox.Text = " ";
         }
 
         //--------Event Handlers-----------
         private void saveAccInfoButton_Click(object sender, EventArgs e)
-        {            
-            thisMember.FName = firstNameBox.Text;
-            thisMember.LName = lastNameBox.Text;
-            thisMember.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
-            thisMember.Address1 = address1Box.Text;
-            thisMember.Address2 = address2Box.Text;
-            thisMember.City = cityBox.Text;
-            thisMember.State = stateBox.Text;
-            thisMember.Zip = Convert.ToInt32(zipBox.Text);
-            thisMember.Phone = Convert.ToString(phoneNumBox.Text);
-            thisLogin.Username = userNameBox.Text;
-            thisLogin.Password = passwordBox.Text;
+        {
+            //account info
+            cardNum = Convert.ToInt32(cardNumberBox.Text);
+            paymentType = Convert.ToInt32(cardTypeDropBox.Text);
+            //member info
+            fName = firstNameBox.Text;
+            lName = lastNameBox.Text;
+            address1 = address1Box.Text;
+            address2 = address2Box.Text;
+            phone = phoneNumBox.Text;
+            city = cityBox.Text;
+            state = stateComboBox.Text;
+            zip = Convert.ToInt32(zipBox.Text);
+            dateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
+            //login info
+            username = userNameBox.Text;
+            password = passwordBox.Text;
 
-            string DOBString = Convert.ToString(thisMember.DateOfBirth);
+            string cardNumString = Convert.ToString(cardNum);
+            string paymentTypeString = Convert.ToString(paymentType);
+            string DOBString = Convert.ToString(dateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            int scopeID = thisAGG.CreateNewProfile(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
-            thisLogin.CreateLogin(thisLogin.Username, thisLogin.Password, scopeID);
+            thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, address1, address2, phone, city, state, zip, DOBString, username, password);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
         }
