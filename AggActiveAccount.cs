@@ -8,7 +8,7 @@ using System.Data;
 
 namespace MIS220GroupProject
 {
-    class AggActiveAccount :Account
+    class AggActiveAccount : Account
     {
         private int id;
         private string fName;
@@ -108,13 +108,21 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
-        public int CreateAggActiveAccount(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
-        {
+        public int CreateNewProfile(string fName, string lName, string address1, string address2, string phone, string city, string state, Int32 zip, string dateOfBirth)
+        {           
             //SQL Statement for creating new member
-            string sqlIns = "INSERT INTO Member(FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
-                            "VALUES(@firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
-                //SQL returns auto-implemented memID used to create corresponding login
-                            "select SCOPE_IDENTITY();";
+            string sqlProfileCreate =
+                "declare @accID int, @memStatus varchar(20), @balance decimal(10,2), @cardNumber bigint, @paymentType bit" +
+                "insert into Account(MemStatus, Balance, CardNumber, PaymentType)" +
+                "values(@memStatus, @balance, @cardNumber, @paymentType)" +
+                "set @accID = SCOPE_IDENTITY()" +
+                "declare @memID int, @firstName varchar(50), @lastName varchar(50), @DOB datetime, @address1 varchar(50), @address2 varchar(50), @city varchar(50), @state varchar(20), @zip int, @phone varchar(20)" +
+                "insert into Member(AccountID, FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
+                "values(@accID, @firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
+                "set @memID = SCOPE_IDENTITY()" +
+                "declare @userName varchar(50), @password varchar(50)" +
+                "insert into Login(Username, MemberID, Password, IsAdmin)" +
+                "values(@userName, @memID, @password, null);";
 
 
             //Establishes connection with SQL DB
@@ -125,7 +133,7 @@ namespace MIS220GroupProject
             try
             {
                 //non-query
-                SqlCommand cmdIns = new SqlCommand(sqlIns, dbCon);
+                SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
                 cmdIns.Parameters.AddWithValue("@firstName", fName);
                 cmdIns.Parameters.AddWithValue("@lastName", lName);
                 cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
@@ -156,12 +164,14 @@ namespace MIS220GroupProject
         }
 
         public DataSet CreateAggDataTable(string userName, string password)
-        {
-            //SQL Statement for creating new member
-            string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
-            " set @userName = '" + userName + "' set @password = '" + password + "'" +
-            "SELECT * FROM Login l, Member m where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID;";
+        {//This method pulls all relevant information for the user that logs in
 
+            //creating the temp variables to pass the supplied username and password
+            string sqlQuery = "declare @userName varchar(50), @password varchar(50)" +
+            //passing username and password from for to SQL to find correct member
+            " set @userName = '" + userName + "' set @password = '" + password + "'" +
+            //selecting account, login, and member information corresponding to the login credentials
+            "SELECT * FROM Login l, Member m, Account a where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID and m.AccountID = a.AccountID;";
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);

@@ -24,6 +24,8 @@ namespace MIS220GroupProject
         public NewMemForm()
         {
             thisMember = new Member();
+            thisMember = new Member();
+            thisLogin = new Login();
             InitializeComponent();
         }
 
@@ -56,11 +58,7 @@ namespace MIS220GroupProject
 
         //--------Event Handlers-----------
         private void saveAccInfoButton_Click(object sender, EventArgs e)
-        {
-
-            thisMember = new Member();
-            thisLogin = new Login();
-
+        {            
             thisMember.FName = firstNameBox.Text;
             thisMember.LName = lastNameBox.Text;
             thisMember.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
@@ -76,10 +74,17 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(thisMember.DateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            int scopeID = thisAGG.CreateAccount(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
+            int scopeID = thisAGG.CreateNewProfile(thisMember.FName, thisMember.LName, thisMember.Address1, thisMember.Address2, thisMember.Phone, thisMember.City, thisMember.State, thisMember.Zip, DOBString);
             thisLogin.CreateLogin(thisLogin.Username, thisLogin.Password, scopeID);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
+        }
+
+        private void cardTypeDropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //set combo box as a drop down style so input could be controlled to desired responses
+            //see list of options in form design by clicking on 'edit items' in properties description
+            cardTypeDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }
