@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.accBalBox = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toMovieList_BTN = new System.Windows.Forms.Button();
             this.toAcctInfoScreen_BTN = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.toPaymentScreen_BTN = new System.Windows.Forms.Button();
             this.toRewardScreen_BTN = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.memNameBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,17 +49,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Hello, ";
             // 
-            // richTextBox1
+            // accBalBox
             // 
-            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.richTextBox1.Font = new System.Drawing.Font("Segoe WP", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.richTextBox1.Location = new System.Drawing.Point(29, 56);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBox1.Size = new System.Drawing.Size(149, 76);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "25.00";
+            this.accBalBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.accBalBox.Font = new System.Drawing.Font("Segoe WP", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accBalBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.accBalBox.Location = new System.Drawing.Point(29, 56);
+            this.accBalBox.Name = "accBalBox";
+            this.accBalBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.accBalBox.Size = new System.Drawing.Size(149, 76);
+            this.accBalBox.TabIndex = 1;
+            this.accBalBox.Text = "25.00";
             // 
             // label2
             // 
@@ -124,23 +124,23 @@
             this.toRewardScreen_BTN.Text = "See Rewards";
             this.toRewardScreen_BTN.UseVisualStyleBackColor = true;
             // 
-            // richTextBox2
+            // memNameBox
             // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.Font = new System.Drawing.Font("Segoe WP", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(362, 37);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(130, 31);
-            this.richTextBox2.TabIndex = 9;
-            this.richTextBox2.Text = "User Name";
+            this.memNameBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.memNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.memNameBox.Font = new System.Drawing.Font("Segoe WP", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memNameBox.Location = new System.Drawing.Point(362, 37);
+            this.memNameBox.Name = "memNameBox";
+            this.memNameBox.Size = new System.Drawing.Size(130, 31);
+            this.memNameBox.TabIndex = 9;
+            this.memNameBox.Text = "User Name";
             // 
             // MemberHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(576, 451);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.memNameBox);
             this.Controls.Add(this.toRewardScreen_BTN);
             this.Controls.Add(this.toPaymentScreen_BTN);
             this.Controls.Add(this.label3);
@@ -148,7 +148,7 @@
             this.Controls.Add(this.toAcctInfoScreen_BTN);
             this.Controls.Add(this.toMovieList_BTN);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.accBalBox);
             this.Controls.Add(this.label1);
             this.Name = "MemberHome";
             this.Text = "MemberHome";
@@ -160,7 +160,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox accBalBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button toMovieList_BTN;
         private System.Windows.Forms.Button toAcctInfoScreen_BTN;
@@ -168,6 +168,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button toPaymentScreen_BTN;
         private System.Windows.Forms.Button toRewardScreen_BTN;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox memNameBox;
     }
 }
