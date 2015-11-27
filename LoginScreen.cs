@@ -13,8 +13,7 @@ namespace MIS220GroupProject
     public partial class LoginScreen : Form
     {
         //Members--------------------------
-        private Member thisMember;
-        private Login thisLogin;
+        private AggActiveAccount thisAGGAcc;
         //constructors-------------------
         public LoginScreen()
         {
@@ -22,11 +21,11 @@ namespace MIS220GroupProject
         }
 
         private void login_BTN_Click(object sender, EventArgs e)
-        {            
-            thisMember = new Member();
-            thisLogin = new Login();
+        {
+            thisAGGAcc = new AggActiveAccount();
             DataSet memberDataSet = new DataSet();
-            memberDataSet = thisMember.CreateMemberDataTable(loginUserBox.Text, loginPassBox.Text);
+            //passes the username and password from the form to check the SQL database for a match
+            memberDataSet = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
 
             
             if (memberDataSet.Tables["Table1"].Rows.Count == 0)
