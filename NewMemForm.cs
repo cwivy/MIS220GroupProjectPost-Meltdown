@@ -80,8 +80,10 @@ namespace MIS220GroupProject
         private void saveAccInfoButton_Click(object sender, EventArgs e)
         {
             //account info
-            cardNum = Convert.ToInt32(cardNumberBox.Text);
-            paymentType = Convert.ToInt32(cardTypeDropBox.Text);
+            if(Convert.ToString(cardTypeDropBox.Text) == "Debit")
+            { paymentType = 1; }
+            else 
+            { paymentType = 0; }            
             //member info
             fName = firstNameBox.Text;
             lName = lastNameBox.Text;

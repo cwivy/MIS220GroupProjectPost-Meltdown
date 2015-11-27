@@ -58,8 +58,8 @@ namespace MIS220GroupProject
                 //account balance from the user's account and their name I think for the Home page right now,
                 //I just don't know how to do it since the thisMember object only exists on this Login form.
                 //I'd love to keep the Member object permanent but I'm worried we may how to query it out every time.
-            thisMember.PopulateMember(memberDataSet.Tables[0].Rows[0]);
-            thisMember.DisplayMember();
+            //thisAGGAcc.PopulateMember(memberDataSet.Tables[0].Rows[0]);
+            //thisAGGAcc.DisplayMember();
         }
 
         private void createAccount_BTN_Click(object sender, EventArgs e)

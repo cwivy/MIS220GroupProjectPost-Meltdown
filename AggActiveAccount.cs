@@ -208,6 +208,7 @@ namespace MIS220GroupProject
 
                 dbCon.Open();
                 cmdIns.ExecuteNonQuery();
+               
 
             }
 
