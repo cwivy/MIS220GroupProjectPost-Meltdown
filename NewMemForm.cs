@@ -107,6 +107,8 @@ namespace MIS220GroupProject
             thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
+            this.Hide();
+            new LoginScreen().Show();
         }
 
         private void cardTypeDropBox_SelectedIndexChanged(object sender, EventArgs e)
