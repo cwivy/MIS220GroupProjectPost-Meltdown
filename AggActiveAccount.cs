@@ -161,16 +161,19 @@ namespace MIS220GroupProject
             string sqlProfileCreate =
                 //creates a default account and gathers the auto-incremented accID to link the account and member tables
                 "declare @accID int, @memStatus varchar(20), @balance decimal(10,2), @cardNumber bigint, @paymentType bit" +
+                "set @memStatus = 'Bronze' set @balance = '0.00' set @cardNumber = '" + cardNum + "' set @paymentType = '" + paymentType + "'" +
                 "insert into Account(MemStatus, Balance, CardNumber, PaymentType)" +
                 "values(@memStatus, @balance, @cardNumber, @paymentType)" +
                 "set @accID = SCOPE_IDENTITY()" +
                 //creates a member with the supplied information and gathers the auto-incremented memID to link the member and login tables
                 "declare @memID int, @firstName varchar(50), @lastName varchar(50), @DOB datetime, @address1 varchar(50), @address2 varchar(50), @city varchar(50), @state varchar(20), @zip int, @phone varchar(20)" +
+                "set @firstName = '" + fName + "' set @lastName = '" + lName + "' set @DOB = '" + dateOfBirth + "' set @address1 = '" + address1 + "' set @address2 = '" + address2 + "' set @city = '" + city + "' set @state = '" + state + "' set @zip = '" + zip + "' set @phone = '" + phone + "'" +
                 "insert into Member(AccountID, FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
                 "values(@accID, @firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
                 "set @memID = SCOPE_IDENTITY()" +
                 //creates a login with supplied username and password. Admin status is set to 'null' as default
                 "declare @userName varchar(50), @password varchar(50)" +
+                "set @userName = '" + username + "' set @password = '" + password + "'" +
                 "insert into Login(Username, MemberID, Password, IsAdmin)" +
                 "values(@userName, @memID, @password, null);";
 
@@ -186,30 +189,29 @@ namespace MIS220GroupProject
                         //memStatus and balance are set to default values. If need to be set uncomment and set value of variable
                         //cmdIns.Parameters.AddWithValue("@memStatus", memStatus);
                         //cmdIns.Parameters.AddWithValue("@balance", balance);
-                cmdIns.Parameters.AddWithValue("@cardNumber", cardNumber);
-                cmdIns.Parameters.AddWithValue("@paymentType", paymentType);
-                //insert into member
-                cmdIns.Parameters.AddWithValue("@firstName", fName);
-                cmdIns.Parameters.AddWithValue("@lastName", lName);
-                cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
-                cmdIns.Parameters.AddWithValue("@address1", address1);
-                cmdIns.Parameters.AddWithValue("@address2", address2);
-                cmdIns.Parameters.AddWithValue("@city", city);
-                cmdIns.Parameters.AddWithValue("@state", state);
-                cmdIns.Parameters.AddWithValue("@zip", zip);
-                cmdIns.Parameters.AddWithValue("@phone", phone);
-                //insert into login- remaining values are auto generated/ set to default values 
-                cmdIns.Parameters.AddWithValue("@userName", userName);
-                cmdIns.Parameters.AddWithValue("@password", password);
-
-                cmdIns.Parameters.Clear();
-                cmdIns.Dispose();
-                cmdIns = null;
+                //cmdIns.Parameters.AddWithValue("@cardNumber", cardNumber);
+                //cmdIns.Parameters.AddWithValue("@paymentType", paymentType);
+                ////insert into member
+                //cmdIns.Parameters.AddWithValue("@firstName", fName);
+                //cmdIns.Parameters.AddWithValue("@lastName", lName);
+                //cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
+                //cmdIns.Parameters.AddWithValue("@address1", address1);
+                //cmdIns.Parameters.AddWithValue("@address2", address2);
+                //cmdIns.Parameters.AddWithValue("@city", city);
+                //cmdIns.Parameters.AddWithValue("@state", state);
+                //cmdIns.Parameters.AddWithValue("@zip", zip);
+                //cmdIns.Parameters.AddWithValue("@phone", phone);
+                ////insert into login- remaining values are auto generated/ set to default values 
+                //cmdIns.Parameters.AddWithValue("@userName", userName);
+                //cmdIns.Parameters.AddWithValue("@password", password);
 
                 dbCon.Open();
                 cmdIns.ExecuteNonQuery();
-               
 
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;                
+               
             }
 
             //catch(Exception ex)//need to write exceptions

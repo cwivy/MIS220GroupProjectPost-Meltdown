@@ -83,7 +83,8 @@ namespace MIS220GroupProject
             if(Convert.ToString(cardTypeDropBox.Text) == "Debit")
             { paymentType = 1; }
             else 
-            { paymentType = 0; }            
+            { paymentType = 0; }
+            cardNum = Convert.ToInt32(cardNumberBox.Text);
             //member info
             fName = firstNameBox.Text;
             lName = lastNameBox.Text;
@@ -103,7 +104,7 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(dateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, address1, address2, phone, city, state, zip, DOBString, username, password);
+            thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
         }
