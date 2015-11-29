@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AccountInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccountInfo.Designer.cs">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Reward.cs" />
+    <EmbeddedResource Include="AccountInfo.resx">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
