@@ -39,7 +39,19 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
-        //Methods-------------------------------------------------------------------------------
+        //----------Constructors----------
+        public Login()
+        {
+            this.Username = "bigNick";
+            this.Password = "cage";
+            this.memberID = 1337;
+            this.isAdmin = false;
+        }
+
+
+        //-----------Methods------------
+
+
 
                 
     }

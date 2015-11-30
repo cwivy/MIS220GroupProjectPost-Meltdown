@@ -160,22 +160,12 @@ namespace MIS220GroupProject
             //SQL Statement for creating new member
             string sqlProfileCreate =
                 //creates a default account and gathers the auto-incremented accID to link the account and member tables
-                //"declare @accID int" + //, @memStatus varchar(20), @balance decimal(10,2), @cardNumber bigint, @paymentType bit" +
-                //"set @memStatus = 'Bronze' set @balance = '0.00'" +// set @cardNumber = '" + cardNum + "' set @paymentType = '" + paymentType + "'" +
                 "insert into Account(MemStatus, Balance, CardNumber, PaymentType)" +
                 "values('Bronze', '0.00', @cardNumber, @paymentType)" +
-                //"declare @accID int" +
-                //"set @accID = SCOPE_IDENTITY()" +
                 //creates a member with the supplied information and gathers the auto-incremented memID to link the member and login tables
-                //"declare @memID int" +//, @firstName varchar(50), @lastName varchar(50), @DOB datetime, @address1 varchar(50), @address2 varchar(50), @city varchar(50), @state varchar(20), @zip int, @phone varchar(20)" +
-                //"set @firstName = '" + fName + "' set @lastName = '" + lName + "' set @DOB = '" + dateOfBirth + "' set @address1 = '" + address1 + "' set @address2 = '" + address2 + "' set @city = '" + city + "' set @state = '" + state + "' set @zip = '" + zip + "' set @phone = '" + phone + "'" +
                 "insert into Member(AccountID, FirstName, LastName, DOB, Address1, Address2, City, State, Zip, Phone)" +
                 "values(SCOPE_IDENTITY(), @firstName, @lastName, @DOB, @address1, @address2, @city, @state, @zip, @phone)" +
-                //"declare @memID int" +
-                //"set @memID = SCOPE_IDENTITY()" +
                 //creates a login with supplied username and password. Admin status is set to 'null' as default
-                //"declare @userName varchar(50), @password varchar(50)" +
-                //"set @userName = '" + username + "' set @password = '" + password + "'" +
                 "insert into Login(Username, MemberID, Password, IsAdmin)" +
                 "values(@userName, SCOPE_IDENTITY(), @password, null);";
 
@@ -188,9 +178,6 @@ namespace MIS220GroupProject
                 //non-query
                 SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
                 //insert into account
-                        //memStatus and balance are set to default values. If need to be set uncomment and set value of variable
-                        //cmdIns.Parameters.AddWithValue("@memStatus", memStatus);
-                        //cmdIns.Parameters.AddWithValue("@balance", balance);
                 cmdIns.Parameters.AddWithValue("@cardNumber", cardNumber);
                 cmdIns.Parameters.AddWithValue("@paymentType", paymentType);
                 //insert into member

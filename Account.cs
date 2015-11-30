@@ -9,7 +9,7 @@ namespace MIS220GroupProject
     public class Account
     {
         private int accId;
-        private int cardNum;
+        private long cardNum;
         private double balance;
         private List<int> rentalsHeld;
         private string memStatus;
@@ -23,7 +23,7 @@ namespace MIS220GroupProject
             set { accId = value; }
         }
 
-        public int CardNum
+        public long CardNum
         {
             get { return cardNum; }
             set { cardNum = value; }
@@ -51,6 +51,18 @@ namespace MIS220GroupProject
         {
             get { return paymentType; }
             set { paymentType = value; }
+        }
+
+        //----------Constructors---------
+        public Account()
+        {
+            this.AccId = 80085;
+            this.Balance = 12.00;
+            this.CardNum = 123456789000;
+            //this.RentalsHeld.Add = 1; How to add to list....
+            this.MemStatus = "Gold";
+            this.PaymentType = 1;
+
         }
         
         //Carlton: reminder Create a function for pop up message to display account information AND one that will
