@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace MIS220GroupProject
 {
@@ -31,9 +33,41 @@ namespace MIS220GroupProject
 
         private void submitButt_Click(object sender, EventArgs e)
         {
-            profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
-            CopyObject2Form(profile);
-            
+            //SQL Statement for processing an account payment
+            string sqlProfileCreate =
+                "update Account " +
+                "set Balance = (Balance - @paymentAmount) " +
+                "where AccountID = '"+ profile.AccId +"';";                              
+                
+
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+                //non-query
+                SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
+
+                cmdIns.Parameters.AddWithValue("@paymentAmount", paymentUpDown.Value);
+
+                dbCon.Open();
+                cmdIns.ExecuteNonQuery();
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;
+            }
+
+            //catch(Exception ex)//need to write exceptions
+            finally
+            {
+                dbCon.Close();
+                MessageBox.Show("Your order has been confirmed! Thank you for your business!");
+                this.Hide();
+                MovieList movieListForm = new MovieList(profile);
+                movieListForm.Show();
+            }            
         }
 
         private void errorMessage()

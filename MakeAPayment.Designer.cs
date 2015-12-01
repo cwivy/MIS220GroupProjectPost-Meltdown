@@ -55,7 +55,7 @@
             this.accBalBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accBalBox2.ForeColor = System.Drawing.SystemColors.WindowText;
             this.accBalBox2.Location = new System.Drawing.Point(376, 36);
-            this.accBalBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.accBalBox2.Margin = new System.Windows.Forms.Padding(4);
             this.accBalBox2.Name = "accBalBox2";
             this.accBalBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.accBalBox2.Size = new System.Drawing.Size(197, 93);
@@ -68,14 +68,14 @@
             this.label1.Location = new System.Drawing.Point(56, 41);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 17);
+            this.label1.Size = new System.Drawing.Size(119, 17);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Make A Payment:";
+            this.label1.Text = "Payment Amount:";
             // 
             // submitButt
             // 
             this.submitButt.Location = new System.Drawing.Point(207, 110);
-            this.submitButt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.submitButt.Margin = new System.Windows.Forms.Padding(4);
             this.submitButt.Name = "submitButt";
             this.submitButt.Size = new System.Drawing.Size(145, 28);
             this.submitButt.TabIndex = 9;
@@ -87,7 +87,7 @@
             // 
             this.backToHome_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backToHome_BTN.Location = new System.Drawing.Point(4, 4);
-            this.backToHome_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backToHome_BTN.Margin = new System.Windows.Forms.Padding(4);
             this.backToHome_BTN.Name = "backToHome_BTN";
             this.backToHome_BTN.Size = new System.Drawing.Size(83, 28);
             this.backToHome_BTN.TabIndex = 65;
@@ -104,7 +104,7 @@
             0,
             131072});
             this.paymentUpDown.Location = new System.Drawing.Point(192, 36);
-            this.paymentUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.paymentUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.paymentUpDown.Name = "paymentUpDown";
             this.paymentUpDown.Size = new System.Drawing.Size(160, 22);
             this.paymentUpDown.TabIndex = 66;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.accBalBox2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MakeAPayment";
             this.Text = "MakeAPayment";
             ((System.ComponentModel.ISupportInitialize)(this.paymentUpDown)).EndInit();
