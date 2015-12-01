@@ -31,7 +31,7 @@ namespace MIS220GroupProject
         private void toMovieList_BTN_Click(object sender, EventArgs e)
         {
             MovieList form = new MovieList(profile);
-            form.Show();
+            this.Hide();
         }
 
         private void toAcctInfoScreen_BTN_Click(object sender, EventArgs e)

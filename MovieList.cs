@@ -20,6 +20,7 @@ namespace MIS220GroupProject
         public MovieList(AggActiveAccount prof)
         {
             InitializeComponent();
+            this.Show();
             profile = prof;
         }
 

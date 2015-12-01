@@ -67,7 +67,7 @@
             "Movie List",
             "Log Out"});
             this.goTo_DropBox.Location = new System.Drawing.Point(476, 2);
-            this.goTo_DropBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.goTo_DropBox.Margin = new System.Windows.Forms.Padding(2);
             this.goTo_DropBox.Name = "goTo_DropBox";
             this.goTo_DropBox.Size = new System.Drawing.Size(126, 21);
             this.goTo_DropBox.TabIndex = 63;
@@ -76,7 +76,7 @@
             // billingHistory_BTN
             // 
             this.billingHistory_BTN.Location = new System.Drawing.Point(257, 238);
-            this.billingHistory_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.billingHistory_BTN.Margin = new System.Windows.Forms.Padding(2);
             this.billingHistory_BTN.Name = "billingHistory_BTN";
             this.billingHistory_BTN.Size = new System.Drawing.Size(123, 62);
             this.billingHistory_BTN.TabIndex = 62;
@@ -97,7 +97,7 @@
             // birthDate_TXT
             // 
             this.birthDate_TXT.Location = new System.Drawing.Point(433, 128);
-            this.birthDate_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.birthDate_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.birthDate_TXT.Name = "birthDate_TXT";
             this.birthDate_TXT.ReadOnly = true;
             this.birthDate_TXT.Size = new System.Drawing.Size(170, 20);
@@ -117,7 +117,7 @@
             // phone_TXT
             // 
             this.phone_TXT.Location = new System.Drawing.Point(130, 194);
-            this.phone_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.phone_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.phone_TXT.Name = "phone_TXT";
             this.phone_TXT.ReadOnly = true;
             this.phone_TXT.Size = new System.Drawing.Size(170, 20);
@@ -137,7 +137,7 @@
             // zip_TXT
             // 
             this.zip_TXT.Location = new System.Drawing.Point(130, 171);
-            this.zip_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.zip_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.zip_TXT.Name = "zip_TXT";
             this.zip_TXT.ReadOnly = true;
             this.zip_TXT.Size = new System.Drawing.Size(170, 20);
@@ -157,7 +157,7 @@
             // state_TXT
             // 
             this.state_TXT.Location = new System.Drawing.Point(130, 149);
-            this.state_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.state_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.state_TXT.Name = "state_TXT";
             this.state_TXT.ReadOnly = true;
             this.state_TXT.Size = new System.Drawing.Size(170, 20);
@@ -177,7 +177,7 @@
             // city_TXT
             // 
             this.city_TXT.Location = new System.Drawing.Point(130, 126);
-            this.city_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.city_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.city_TXT.Name = "city_TXT";
             this.city_TXT.ReadOnly = true;
             this.city_TXT.Size = new System.Drawing.Size(170, 20);
@@ -197,7 +197,7 @@
             // address2_TXT
             // 
             this.address2_TXT.Location = new System.Drawing.Point(130, 103);
-            this.address2_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.address2_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.address2_TXT.Name = "address2_TXT";
             this.address2_TXT.ReadOnly = true;
             this.address2_TXT.Size = new System.Drawing.Size(170, 20);
@@ -217,7 +217,7 @@
             // address1_TXT
             // 
             this.address1_TXT.Location = new System.Drawing.Point(130, 80);
-            this.address1_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.address1_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.address1_TXT.Name = "address1_TXT";
             this.address1_TXT.ReadOnly = true;
             this.address1_TXT.Size = new System.Drawing.Size(170, 20);
@@ -237,7 +237,7 @@
             // lastName_TXT
             // 
             this.lastName_TXT.Location = new System.Drawing.Point(130, 58);
-            this.lastName_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastName_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.lastName_TXT.Name = "lastName_TXT";
             this.lastName_TXT.ReadOnly = true;
             this.lastName_TXT.Size = new System.Drawing.Size(170, 20);
@@ -257,7 +257,7 @@
             // firstName_TXT
             // 
             this.firstName_TXT.Location = new System.Drawing.Point(130, 35);
-            this.firstName_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstName_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.firstName_TXT.Name = "firstName_TXT";
             this.firstName_TXT.ReadOnly = true;
             this.firstName_TXT.Size = new System.Drawing.Size(170, 20);
@@ -266,7 +266,7 @@
             // save_BTN
             // 
             this.save_BTN.Location = new System.Drawing.Point(398, 238);
-            this.save_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save_BTN.Margin = new System.Windows.Forms.Padding(2);
             this.save_BTN.Name = "save_BTN";
             this.save_BTN.Size = new System.Drawing.Size(123, 62);
             this.save_BTN.TabIndex = 41;
@@ -276,7 +276,7 @@
             // activeOrders_BTN
             // 
             this.activeOrders_BTN.Location = new System.Drawing.Point(118, 238);
-            this.activeOrders_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.activeOrders_BTN.Margin = new System.Windows.Forms.Padding(2);
             this.activeOrders_BTN.Name = "activeOrders_BTN";
             this.activeOrders_BTN.Size = new System.Drawing.Size(123, 62);
             this.activeOrders_BTN.TabIndex = 40;
@@ -319,7 +319,7 @@
             // paymentType_TXT
             // 
             this.paymentType_TXT.Location = new System.Drawing.Point(433, 104);
-            this.paymentType_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.paymentType_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.paymentType_TXT.Name = "paymentType_TXT";
             this.paymentType_TXT.ReadOnly = true;
             this.paymentType_TXT.Size = new System.Drawing.Size(170, 20);
@@ -328,7 +328,7 @@
             // memStatus_TXT
             // 
             this.memStatus_TXT.Location = new System.Drawing.Point(433, 80);
-            this.memStatus_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.memStatus_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.memStatus_TXT.Name = "memStatus_TXT";
             this.memStatus_TXT.ReadOnly = true;
             this.memStatus_TXT.Size = new System.Drawing.Size(170, 20);
@@ -337,7 +337,7 @@
             // cardNum_TXT
             // 
             this.cardNum_TXT.Location = new System.Drawing.Point(433, 56);
-            this.cardNum_TXT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cardNum_TXT.Margin = new System.Windows.Forms.Padding(2);
             this.cardNum_TXT.Name = "cardNum_TXT";
             this.cardNum_TXT.ReadOnly = true;
             this.cardNum_TXT.Size = new System.Drawing.Size(170, 20);
@@ -376,7 +376,7 @@
             this.Controls.Add(this.paymentType_TXT);
             this.Controls.Add(this.memStatus_TXT);
             this.Controls.Add(this.cardNum_TXT);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AccountInfo";
             this.Text = "AccountInfo";
             this.ResumeLayout(false);

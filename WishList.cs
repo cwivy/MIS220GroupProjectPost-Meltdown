@@ -14,8 +14,8 @@ namespace MIS220GroupProject
 {
     public partial class WishList : Form
     {
-        int memID;
-        int accID;
+        AggActiveAccount profile = new AggActiveAccount();
+
         public WishList()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 0)
             {
                 this.Hide();
-                MemberHome frm = new MemberHome(memID, accID);
+                MemberHome frm = new MemberHome(profile);
                 frm.Show();
 
             }
@@ -55,7 +55,7 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 2)
             {
                 this.Hide();
-                AccountInfo frm = new AccountInfo();
+                AccountInfo frm = new AccountInfo(profile);
                 frm.Show();
             }
         }
