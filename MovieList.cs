@@ -17,6 +17,8 @@ namespace MIS220GroupProject
         AggActiveAccount profile;
         string movieSelect;
         double moviePrice;
+        int movieID;
+        int daysForRent;
 
         public MovieList(AggActiveAccount prof)
         {
@@ -40,58 +42,33 @@ namespace MIS220GroupProject
                 movieListDataGrid.DataSource = myTable;
                 connection.Close();
             }
-            
-
-        }
-
-        private void returnTo_BOX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (returnTo_BOX.SelectedIndex == 0)
-            {
-                this.Hide();
-                MemberHome frm = new MemberHome(profile);
-                frm.Show();
-                
-            }
-            if(returnTo_BOX.SelectedIndex == 1)
-            {
-                this.Hide();
-                WishList frm = new WishList(profile);
-                frm.Show();
-
-            }
-            if(returnTo_BOX.SelectedIndex == 2)
-            {
-                this.Hide();
-                AccountInfo frm = new AccountInfo(profile);
-                frm.Show();
-            }
         }
 
         private void wishList_BTN_Click(object sender, EventArgs e)
         {
-        //    string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + title + "')";
+            WishList frm = new WishList(profile);
+            frm.Show();
+            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + movieSelect + "')";
 
-        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-        //    SqlConnection dbCon = new SqlConnection(dbStr);
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
 
-        //    try
-        //    {
-        //        DataSet memberDataSet = new DataSet();
-        //        using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
-        //        {
-        //            cmd.Connection.Open();
-        //            DataTable memberTable = new DataTable();
-        //            memberTable.Load(cmd.ExecuteReader());
-        //            //string tableName = "MemberInfoTable";
-        //            memberDataSet.Tables.Add(memberTable);
-        //        }
+            try
+            {
+                DataSet memberDataSet = new DataSet();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+                {
+                    cmd.Connection.Open();
+                    DataTable memberTable = new DataTable();
+                    memberTable.Load(cmd.ExecuteReader());
+                    memberDataSet.Tables.Add(memberTable);
+                }
 
-        //    }
-        //    finally
-        //    {
-        //        dbCon.Close();
-        //    }
+            }
+            finally
+            {
+                dbCon.Close();
+            }
 
         }
 
@@ -100,19 +77,39 @@ namespace MIS220GroupProject
             DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
             movieSelect = Convert.ToString(row.Cells[0].Value);
             moviePrice = Convert.ToDouble(Convert.ToString(row.Cells[6].Value));
+            daysForRent = Convert.ToInt32(Convert.ToString(row.Cells[5].Value));
+
         }
 
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
-            Checkout frm = new Checkout(profile, movieSelect, moviePrice);
+
+            Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
             //frm.title = movieListDataGrid.CurrentRow.Cells[0].Value.ToString();
             //frm.rentalPrice = movieListDataGrid.CurrentRow.Cells[6].Value.ToString();
+
             frm.Show();
             this.Hide();
         }
 
-       
+        private void sortBy_DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sortByGenre_DropBox.SelectedIndex == 0)
+            {
 
+            }
+            if (sortByGenre_DropBox.SelectedIndex == 1)
+            {
+
+            }
+
+        }
+
+        private void backToHome_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MemberHome form = new MemberHome(profile);
+        }
 
     }
-}
+   }

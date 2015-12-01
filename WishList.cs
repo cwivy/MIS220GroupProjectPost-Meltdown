@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using MIS220GroupProject;
 
 namespace MIS220GroupProject
 {
     public partial class WishList : Form
     {
         AggActiveAccount profile = new AggActiveAccount();
+
 
         public WishList(AggActiveAccount prof)
         {
@@ -27,13 +29,15 @@ namespace MIS220GroupProject
         private void WishList_Load(object sender, EventArgs e)
         {
             string connectionString = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-            string sql = "SELECT Title FROM WishList";
-
+            string sqlCmd = "SELECT m.Title, m.Genre, m.Rating, m.RentalPrice FROM WishList as w join Movie as m on w.MovieID = m.MovieID WHERE w.MemberID = @memberID";
+           
             using (var connection = new SqlConnection(connectionString))
-            using (var command = new SqlCommand(sql, connection))
-            using (var adapter = new SqlDataAdapter(command))
+            using (var command = new SqlCommand(sqlCmd, connection))
+            using (var adapter = new SqlDataAdapter(command))            
             {
                 connection.Open();
+                command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@memberID", AggActiveAccount.memberID);
                 var myTable = new DataTable();
                 adapter.Fill(myTable);
                 dataGridView1.DataSource = myTable;
@@ -62,6 +66,11 @@ namespace MIS220GroupProject
                AccountInfo frm = new AccountInfo(profile);
                frm.Show();
             }
+        }
+
+        private void removeWishList_BTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

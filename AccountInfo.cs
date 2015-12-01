@@ -39,11 +39,16 @@ namespace MIS220GroupProject
             birthDate_TXT.Text = prof.DateOfBirth.ToString();
         }
 
-        public AggActiveAccount CopyForm2Object()
+        private void updateAccount_BTN_Click(object sender, EventArgs e)
         {
-            AggActiveAccount prof = new AggActiveAccount();
+            UpdateAccountInfo form = new UpdateAccountInfo(profile);
+            this.Hide();
+        }
 
-            return prof;
+        private void backToHome_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MemberHome form = new MemberHome(profile);
         }
     }
 }
