@@ -80,6 +80,14 @@
     <Compile Include="MovieList.Designer.cs">
       <DependentUpon>MovieList.cs</DependentUpon>
     </Compile>
+    <Compile Include="MovieRentalDataSet.cs">
+      <DependentUpon>MovieRentalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MovieRentalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieRentalDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NewMemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +98,11 @@
     <Compile Include="Movie.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="Reward.cs" />
     <EmbeddedResource Include="AccountInfo.resx">
       <DependentUpon>AccountInfo.cs</DependentUpon>
@@ -112,10 +125,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="MovieRentalDataSet.xsc">
+      <DependentUpon>MovieRentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MovieRentalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MovieRentalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MovieRentalDataSet.xss">
+      <DependentUpon>MovieRentalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
