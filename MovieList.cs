@@ -94,6 +94,8 @@ namespace MIS220GroupProject
             if(returnTo_BOX.SelectedIndex == 1)
             {
                 this.Hide();
+                WishList frm = new WishList(profile);
+                frm.Show();
 
             }
             if(returnTo_BOX.SelectedIndex == 2)
