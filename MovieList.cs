@@ -17,6 +17,8 @@ namespace MIS220GroupProject
         AggActiveAccount profile;
         string movieSelect;
         double moviePrice;
+        int movieID;
+        int daysForRent;
 
         public MovieList(AggActiveAccount prof)
         {
@@ -100,11 +102,13 @@ namespace MIS220GroupProject
             DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
             movieSelect = Convert.ToString(row.Cells[0].Value);
             moviePrice = Convert.ToDouble(Convert.ToString(row.Cells[6].Value));
+            daysForRent = Convert.ToInt32(Convert.ToString(row.Cells[5].Value));
+            
         }
 
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
-            Checkout frm = new Checkout(profile, movieSelect, moviePrice);
+            Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
             //frm.title = movieListDataGrid.CurrentRow.Cells[0].Value.ToString();
             //frm.rentalPrice = movieListDataGrid.CurrentRow.Cells[6].Value.ToString();
             frm.Show();
