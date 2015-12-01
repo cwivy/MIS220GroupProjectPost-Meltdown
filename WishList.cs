@@ -16,20 +16,25 @@ namespace MIS220GroupProject
     public partial class WishList : Form
     {
         AggActiveAccount profile = new AggActiveAccount();
-
+        string movieSelect;
+        double moviePrice;
+        public static int movieID;
+        int daysForRent;
 
         public WishList(AggActiveAccount prof)
         {
             InitializeComponent();
             this.Show();
             profile = prof;
-            //CopyObject2Form(profile);
+            MovieList mList = new MovieList(prof);
+            mList.Hide();
         }
 
         private void WishList_Load(object sender, EventArgs e)
         {
             string connectionString = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-            string sqlCmd = "SELECT m.Title, m.Genre, m.Rating, m.RentalPrice FROM WishList as w join Movie as m on w.MovieID = m.MovieID WHERE w.MemberID = @memberID";
+            string sqlCmd = "INSERT INTO WishList(movieID) VALUES (@movieID)";
+            sqlCmd =  "SELECT m.Title, m.Genre, m.Rating, m.RentalPrice, m.daysForRent FROM WishList as w join Movie as m on w.MovieID = m.MovieID WHERE w.MemberID = @memberID";
            
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(sqlCmd, connection))
@@ -37,6 +42,7 @@ namespace MIS220GroupProject
             {
                 connection.Open();
                 command.CommandType = CommandType.Text;
+                command.Parameters.AddWithValue("@movieID", MovieList.movieID);
                 command.Parameters.AddWithValue("@memberID", AggActiveAccount.memberID);
                 var myTable = new DataTable();
                 adapter.Fill(myTable);
@@ -72,5 +78,20 @@ namespace MIS220GroupProject
         {
 
         }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dataGridView1.Rows[dataGridView1.SelectedCells[0].RowIndex];
+            movieSelect = Convert.ToString(row.Cells[0].Value);
+            moviePrice = Convert.ToDouble(Convert.ToString(row.Cells[3].Value));
+            daysForRent = Convert.ToInt32(Convert.ToString(row.Cells[4].Value));
+        }
+
+        private void checkOut_BTN_Click(object sender, EventArgs e)
+        {
+            Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
+            frm.Show();
+            this.Hide();
+        }
+
     }
 }

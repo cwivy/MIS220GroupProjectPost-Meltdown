@@ -17,7 +17,7 @@ namespace MIS220GroupProject
         AggActiveAccount profile;
         string movieSelect;
         double moviePrice;
-        int movieID;
+        public static int movieID;
         int daysForRent;
 
         public MovieList(AggActiveAccount prof)
@@ -70,8 +70,6 @@ namespace MIS220GroupProject
 
         private void wishList_BTN_Click(object sender, EventArgs e)
         {
-            WishList frm = new WishList(profile);
-            frm.Show();
             string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + movieSelect + "')";
 
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
@@ -94,6 +92,9 @@ namespace MIS220GroupProject
                 dbCon.Close();
             }
 
+            WishList frm = new WishList(profile);
+            frm.Show();
+
         }
 
         private void movieListDataGrid_SelectionChanged(object sender, EventArgs e)
@@ -108,7 +109,7 @@ namespace MIS220GroupProject
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
          
-	Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
+	       Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
             //frm.title = movieListDataGrid.CurrentRow.Cells[0].Value.ToString();
             //frm.rentalPrice = movieListDataGrid.CurrentRow.Cells[6].Value.ToString();
 

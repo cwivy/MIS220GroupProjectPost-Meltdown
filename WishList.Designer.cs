@@ -43,6 +43,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(633, 211);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // checkOut_BTN
             // 
@@ -52,6 +53,7 @@
             this.checkOut_BTN.TabIndex = 3;
             this.checkOut_BTN.Text = "Rent or Buy Movie";
             this.checkOut_BTN.UseVisualStyleBackColor = true;
+            this.checkOut_BTN.Click += new System.EventHandler(this.checkOut_BTN_Click);
             // 
             // removeWishList_BTN
             // 

@@ -33,6 +33,7 @@ namespace MIS220GroupProject
             currentBal_TXT.Text = prof.Balance.ToString();
             afterBal_TXT.Text = Convert.ToString((prof.Balance) - (moviePrice));
             dueDateBox.Text = Convert.ToString(DateTime.Now.AddDays(rentLength));
+
         }
 
         private void checkoutCancel_BTN_Click(object sender, EventArgs e)
