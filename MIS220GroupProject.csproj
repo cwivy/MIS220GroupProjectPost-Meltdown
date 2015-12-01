@@ -66,6 +66,12 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MemberBackgroundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberBackgroundForm.Designer.cs">
+      <DependentUpon>MemberBackgroundForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberDL.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="MemberHome.cs">
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberBackgroundForm.resx">
+      <DependentUpon>MemberBackgroundForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberHome.resx">
       <DependentUpon>MemberHome.cs</DependentUpon>
