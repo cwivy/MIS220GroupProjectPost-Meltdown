@@ -41,12 +41,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(70, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(237, 211);
+            this.dataGridView1.Size = new System.Drawing.Size(633, 211);
             this.dataGridView1.TabIndex = 0;
             // 
             // checkOut_BTN
             // 
-            this.checkOut_BTN.Location = new System.Drawing.Point(222, 249);
+            this.checkOut_BTN.Location = new System.Drawing.Point(307, 252);
             this.checkOut_BTN.Name = "checkOut_BTN";
             this.checkOut_BTN.Size = new System.Drawing.Size(158, 77);
             this.checkOut_BTN.TabIndex = 3;
@@ -55,12 +55,13 @@
             // 
             // removeWishList_BTN
             // 
-            this.removeWishList_BTN.Location = new System.Drawing.Point(12, 249);
+            this.removeWishList_BTN.Location = new System.Drawing.Point(97, 252);
             this.removeWishList_BTN.Name = "removeWishList_BTN";
             this.removeWishList_BTN.Size = new System.Drawing.Size(158, 77);
             this.removeWishList_BTN.TabIndex = 4;
             this.removeWishList_BTN.Text = "Remove from Wish List";
             this.removeWishList_BTN.UseVisualStyleBackColor = true;
+            this.removeWishList_BTN.Click += new System.EventHandler(this.removeWishList_BTN_Click);
             // 
             // returnTo_BOX
             // 
@@ -69,7 +70,7 @@
             "Home Page",
             "Movie List",
             "Account Information"});
-            this.returnTo_BOX.Location = new System.Drawing.Point(318, 106);
+            this.returnTo_BOX.Location = new System.Drawing.Point(534, 279);
             this.returnTo_BOX.Name = "returnTo_BOX";
             this.returnTo_BOX.Size = new System.Drawing.Size(121, 24);
             this.returnTo_BOX.TabIndex = 5;
@@ -80,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(451, 355);
+            this.ClientSize = new System.Drawing.Size(751, 419);
             this.Controls.Add(this.returnTo_BOX);
             this.Controls.Add(this.removeWishList_BTN);
             this.Controls.Add(this.checkOut_BTN);

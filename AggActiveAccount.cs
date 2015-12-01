@@ -30,7 +30,7 @@ namespace MIS220GroupProject
         private int paymentType;
         //login variables
         private string username;
-        private int memberID;
+        public static int memberID;
         private string password;
         private bool isAdmin;
         

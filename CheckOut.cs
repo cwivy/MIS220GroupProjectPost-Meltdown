@@ -28,7 +28,7 @@ namespace MIS220GroupProject
         {
             movieTitle_TXT.Text = movieSelect;
             currentBal_TXT.Text = prof.Balance.ToString();
-            afterBal_TXT.Text = Convert.ToString((prof.Balance) - (moviePrice));         
+            afterBal_TXT.Text = Convert.ToString((prof.Balance) + (moviePrice));         
         }
 
         private void checkoutCancel_BTN_Click(object sender, EventArgs e)
