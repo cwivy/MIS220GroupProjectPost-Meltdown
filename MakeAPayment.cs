@@ -14,10 +14,6 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile;
         private static double balance = 0;
-        private static int totalMakePayment = 0;
-        private static double totalMakePaymentAmt = 0;
-        private static int totalAddBalance = 0;
-        private static double totalAddBalanceAmt = 0;
 
         public MakeAPayment(AggActiveAccount prof)
         {
