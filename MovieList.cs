@@ -92,23 +92,16 @@ namespace MIS220GroupProject
             this.Hide();
         }
 
-        private void sortBy_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (sortByGenre_DropBox.SelectedIndex == 0)
-            {
-
-            }
-            if (sortByGenre_DropBox.SelectedIndex == 1)
-            {
-
-            }
-
-        }
 
         private void backToHome_BTN_Click(object sender, EventArgs e)
         {
             this.Hide();
             MemberHome form = new MemberHome(profile);
+        }
+
+        private void sortByGenre_DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
