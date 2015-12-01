@@ -33,14 +33,31 @@ namespace MIS220GroupProject
 
         private void submitButt_Click(object sender, EventArgs e)
         {
+            bool procede = false;//used to break the loop
+            do 
+            {
+                if(paymentUpDown.Value < 0)
+                {
+                    MessageBox.Show("Please enter a positive payment amount");
+                    paymentUpDown.Value = 0;
+                    procede = false;
+                }
+                else if(profile.Balance - Convert.ToDouble(paymentUpDown.Value) < 0)
+                {
+                    MessageBox.Show("This amount will give you a negative balance. Did you mean to enter this amount?");
+                    paymentUpDown.Value = 0;
+                    procede = false;
+                }
+                else
+                { procede = true; } //if payment is positive and they arent paying more than amount owed this can be submitted to SQL
+            } while (procede == false);
             //SQL Statement for processing an account payment
             string sqlProfileCreate =
                 "update Account " +
                 "set Balance = (Balance - @paymentAmount) " +
-                "where AccountID = '"+ profile.AccId +"';";                              
-                
-
-
+                "where AccountID = '"+ profile.AccId +"';";                            
+               
+            
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);
@@ -63,10 +80,9 @@ namespace MIS220GroupProject
             finally
             {
                 dbCon.Close();
-                MessageBox.Show("Your order has been confirmed! Thank you for your business!");
+                MessageBox.Show("Your payment has been confirmed! Thank you for your business!");
                 this.Hide();
-                MovieList movieListForm = new MovieList(profile);
-                movieListForm.Show();
+                MemberHome form = new MemberHome(profile);
             }            
         }
 
