@@ -14,7 +14,7 @@ namespace MIS220GroupProject
     {
 
         //--------Members-------------  	
-	
+    
         private int id;
         private string fName;
         private string lName;
@@ -140,7 +140,7 @@ namespace MIS220GroupProject
         //    }
 
         //}
-	//createAggMemberInfo
+    //createAggMemberInfo
 
         public void PopulateMember(DataRow memTable)
         {

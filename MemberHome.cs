@@ -17,7 +17,7 @@ namespace MIS220GroupProject
         //    InitializeComponent();
         //}
 
-        public MemberHome(int memID, int accID)
+        public MemberHome(AggActiveAccount member)
         {
             InitializeComponent();
             this.Show();

@@ -23,13 +23,13 @@ namespace MIS220GroupProject
         private void login_BTN_Click(object sender, EventArgs e)
         {
             thisAGGAcc = new AggActiveAccount();
-            DataSet memberDataSet = new DataSet();
+            DataTable memberData = new DataTable();
 
             //Authenticates User
-            memberDataSet = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
+            memberData = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
 
             //if username/pass combo does not exist
-            if (memberDataSet.Tables["Table1"].Rows.Count == 0)
+            if (memberData.Rows.Count == 0)
             {
                 MessageBox.Show("The username or password are invalid.");                
                 loginPassBox.Text = " ";                
@@ -37,7 +37,7 @@ namespace MIS220GroupProject
 
             else //User is authenticated
             {                
-                DataRow memberInfo = memberDataSet.Tables[0].Rows[0];
+                DataRow memberInfo = memberData.Rows[0];
                 string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
                 string LoginIDString = Convert.ToString(memberInfo["MemID"]);
                 string isAdminString = Convert.ToString(memberInfo["IsAdmin"]);
