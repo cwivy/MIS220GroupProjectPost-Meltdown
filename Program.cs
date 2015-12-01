@@ -1,4 +1,15 @@
-﻿using System;
+﻿//--------------------------------------------
+//              Team 6 MIS 220 Project
+//                December 1, 2015
+
+// Team Lead: Carlton Ivy
+// Team Members: Christian Getsinger, Lauryn Day, Dallas Locke
+//
+// Code managed and Collab. on GitHub - Repository: https://github.com/cwivy/MIS220GroupProjectPost-Meltdown.git
+//
+// -------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

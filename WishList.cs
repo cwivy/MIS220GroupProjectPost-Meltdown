@@ -15,7 +15,7 @@ namespace MIS220GroupProject
 {
     public partial class WishList : Form
     {
-        AggActiveAccount profile = new AggActiveAccount();
+        AggActiveAccount profile;
         string movieSelect;
         double moviePrice;
         public static int movieID;
@@ -26,15 +26,15 @@ namespace MIS220GroupProject
             InitializeComponent();
             this.Show();
             profile = prof;
-            MovieList mList = new MovieList(prof);
-            mList.Hide();
+            //MovieList mList = new MovieList(prof);
+            //mList.Hide();
         }
 
         private void WishList_Load(object sender, EventArgs e)
         {
             string connectionString = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-            string sqlCmd = "INSERT INTO WishList(movieID) VALUES (@movieID)";
-            sqlCmd =  "SELECT m.Title, m.Genre, m.Rating, m.RentalPrice, m.daysForRent FROM WishList as w join Movie as m on w.MovieID = m.MovieID WHERE w.MemberID = @memberID";
+            //string sqlCmd = "INSERT INTO WishList(movieID) VALUES (@movieID)";
+            string sqlCmd =  "SELECT m.Title, m.Genre, m.Rating, m.RentalPrice, m.daysForRent FROM WishList as w join Movie as m on w.MovieID = m.MovieID WHERE w.MemberID = @memberID";
            
             using (var connection = new SqlConnection(connectionString))
             using (var command = new SqlCommand(sqlCmd, connection))
@@ -42,8 +42,8 @@ namespace MIS220GroupProject
             {
                 connection.Open();
                 command.CommandType = CommandType.Text;
-                command.Parameters.AddWithValue("@movieID", MovieList.movieID);
-                command.Parameters.AddWithValue("@memberID", AggActiveAccount.memberID);
+                //command.Parameters.AddWithValue("@movieID", MovieList.movieID);
+                command.Parameters.AddWithValue("@memberID", profile.MemberID);
                 var myTable = new DataTable();
                 adapter.Fill(myTable);
                 dataGridView1.DataSource = myTable;

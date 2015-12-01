@@ -8,6 +8,7 @@ namespace MIS220GroupProject
 {
     class Movie
     {
+        //-------Members--------
         private int movieID;
         private string title;
         private string genre;
@@ -17,6 +18,7 @@ namespace MIS220GroupProject
         private DateTime dateForRent;
         private double rentalPrice;
 
+        //----------Properties----------
         public DateTime DateForRent
         {
             get { return dateForRent; }

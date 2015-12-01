@@ -14,6 +14,7 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile;
 
+        //Constructor
         public MemberHome(AggActiveAccount mem)
         {
             InitializeComponent();
@@ -45,6 +46,13 @@ namespace MIS220GroupProject
             MakeAPayment makeAPayment = new MakeAPayment(profile);
             this.Hide();
             makeAPayment.Show();
+        }
+
+        private void toWishlist_BTN_Click(object sender, EventArgs e)
+        {
+            WishList form = new WishList(profile);
+            this.Hide();
+            form.Show();
         }
     }
 }

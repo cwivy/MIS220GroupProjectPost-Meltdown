@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account.cs" />
     <Compile Include="AccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +82,6 @@
     <Compile Include="MemberBackgroundForm.Designer.cs">
       <DependentUpon>MemberBackgroundForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MemberDL.cs" />
-    <Compile Include="Login.cs" />
     <Compile Include="MemberHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,9 +108,7 @@
     <Compile Include="NewMemForm.Designer.cs">
       <DependentUpon>NewMemForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Member.cs" />
     <Compile Include="Movie.cs" />
-    <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>

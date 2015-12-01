@@ -20,6 +20,7 @@ namespace MIS220GroupProject
         public static int movieID;
         int daysForRent;
 
+        //Constructor
         public MovieList(AggActiveAccount prof)
         {
             InitializeComponent();
