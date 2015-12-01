@@ -219,6 +219,7 @@ namespace MIS220GroupProject
             " set @userName = '" + userName + "' set @password = '" + password + "'" +
             //selecting account, login, and member information corresponding to the login credentials
             "SELECT * FROM Login l, Member m, Account a where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID and m.AccountID = a.AccountID;";
+
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);

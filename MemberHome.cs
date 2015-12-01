@@ -12,10 +12,15 @@ namespace MIS220GroupProject
 {
     public partial class MemberHome : Form
     {
-        public MemberHome()
+        //public MemberHome()
+        //{
+        //    InitializeComponent();
+        //}
+
+        public MemberHome(int memID, int accID)
         {
             InitializeComponent();
+            this.Show();
         }
-
     }
 }

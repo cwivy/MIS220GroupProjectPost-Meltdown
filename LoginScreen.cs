@@ -24,16 +24,18 @@ namespace MIS220GroupProject
         {
             thisAGGAcc = new AggActiveAccount();
             DataSet memberDataSet = new DataSet();
-            //passes the username and password from the form to check the SQL database for a match
+
+            //Authenticates User
             memberDataSet = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
 
-            //if a row is not returned is the dataset then the username/password pair does not exist
+            //if username/pass combo does not exist
             if (memberDataSet.Tables["Table1"].Rows.Count == 0)
             {
-                MessageBox.Show("This username and password pair is invalid. Please check that you have the correct information");                
+                MessageBox.Show("The username or password are invalid.");                
                 loginPassBox.Text = " ";                
             }
-            else
+
+            else //User is authenticated
             {                
                 DataRow memberInfo = memberDataSet.Tables[0].Rows[0];
                 string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
@@ -43,7 +45,7 @@ namespace MIS220GroupProject
                 if (LoginIDString == MemberIDString & isAdminString != "True")
                 {
                     this.Hide();
-                    new MemberHome().Show();
+                    new MemberHome(123, 123);
                 }
                 else if (LoginIDString == MemberIDString & isAdminString == "True")
                 {
@@ -52,12 +54,6 @@ namespace MIS220GroupProject
                 }
             }
 
-            //CARTLON: This just populates the member with the information from the DataTable
-            //The pop up box "proves" it's there. Now we need to somehow make the information usable elsewhere
-                //First let's tackle the login screen and making the object show up there. We'll need the
-                //account balance from the user's account and their name I think for the Home page right now,
-                //I just don't know how to do it since the thisMember object only exists on this Login form.
-                //I'd love to keep the Member object permanent but I'm worried we may how to query it out every time.
             //thisAGGAcc.PopulateMember(memberDataSet.Tables[0].Rows[0]);
             //thisAGGAcc.DisplayMember();
         }
