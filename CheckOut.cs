@@ -19,12 +19,21 @@ namespace MIS220GroupProject
             InitializeComponent();
             profile = prof;
             movie = movieSelect;
+            CopyObject2Form(movieSelect, profile);
         }
 
         public void CopyObject2Form(string movieSelect, AggActiveAccount prof)
         {
             movieTitle_TXT.Text = movieSelect;
             currentBal_TXT.Text = prof.Balance.ToString();
+            
+        }
+
+        private void checkoutCancel_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MovieList movieListForm = new MovieList(profile);
+            movieListForm.Show();            
         }
     }
 }

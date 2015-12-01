@@ -93,6 +93,13 @@ namespace MIS220GroupProject
 
         }
 
+        private void movieListDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
+            movieSelect = Convert.ToString(row.Cells[0].Value);
+
+        }
+
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
             Checkout frm = new Checkout(profile, movieSelect);
@@ -102,12 +109,7 @@ namespace MIS220GroupProject
             this.Hide();
         }
 
-        private void movieListDataGrid_SelectionChanged(object sender, EventArgs e)
-        {
-            DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
-            movieSelect = Convert.ToString(row.Cells[0].Value);
-
-        }
+       
 
 
     }
