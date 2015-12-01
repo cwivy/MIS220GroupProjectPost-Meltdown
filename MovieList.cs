@@ -99,10 +99,13 @@ namespace MIS220GroupProject
 
         }
 
+        public string rentalPrice;
+
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
             CheckOut frm = new CheckOut();
             frm.title = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            frm.rentalPrice = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             frm.Show();
             this.Hide();
         }

@@ -39,5 +39,7 @@ namespace MIS220GroupProject
             AccountInfo form = new AccountInfo(profile);
             this.Hide();
         }
+
+
     }
 }

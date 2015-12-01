@@ -42,6 +42,7 @@
             this.yes_BTN.TabIndex = 0;
             this.yes_BTN.Text = "Yes";
             this.yes_BTN.UseVisualStyleBackColor = true;
+            this.yes_BTN.Click += new System.EventHandler(this.yes_BTN_Click);
             // 
             // no_BTN
             // 
