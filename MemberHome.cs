@@ -14,11 +14,11 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile;
 
-        public MemberHome(AggActiveAccount mem)
+        public MemberHome(AggActiveAccount prof)
         {
             InitializeComponent();
             this.Show();
-            profile = mem;
+            profile = prof;
             CopyObject2Form(profile);
         }
 

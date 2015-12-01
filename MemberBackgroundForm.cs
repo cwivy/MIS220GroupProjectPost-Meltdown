@@ -35,6 +35,7 @@ namespace MIS220GroupProject
             balance_TXT.Text = profile.Balance.ToString();
             cardNum_TXT.Text = profile.CardNum.ToString();
             paymentType_TXT.Text = profile.PaymentType.ToString();
+            DOBDateTimePicker.Value = profile.DateOfBirth;
         }
 
         public AggActiveAccount CopyForm2Object()
@@ -54,6 +55,7 @@ namespace MIS220GroupProject
             profile.Balance = Convert.ToDouble(balance_TXT.Text);
             profile.CardNum = Convert.ToInt64(cardNum_TXT);
             profile.PaymentType = Convert.ToInt32(paymentType_TXT);
+            profile.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Value);
             return profile;
         }
     }

@@ -24,42 +24,9 @@ namespace MIS220GroupProject
             profile = prof;
         }
 
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-        //    string sqlIns = "SELECT Title, Genre, ReleaseDate, Rating FROM dbo.Movie WHERE title = '" + listBox1.Text + "';";
-        //    SqlConnection conDataBase = new SqlConnection(dbStr);
-        //    SqlCommand cmdIns = new SqlCommand(sqlIns, conDataBase);
-        //    SqlDataReader myReader;
-
-        //    try
-        //    {
-        //        conDataBase.Open();
-        //        myReader = cmdIns.ExecuteReader();
-
-        //        while (myReader.Read())
-        //        {
-        //            string mTitle = myReader.GetString("Title");
-        //            listBox1.Items.Add(mTitle);
-        //            string mGenre = myReader.GetString("Genre");
-        //            listBox1.Items.Add(mGenre);
-        //            string mReleaseDate = myReader.GetString("ReleaseDate");
-        //            listBox1.Items.Add(mReleaseDate);
-        //            string mRating = myReader.GetString("Rating");
-        //            listBox1.Items.Add(mRating);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        }
-
         private void MovieList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'movieRentalDataSet.Movie' table. You can move, or remove it, as needed.
+            //TODO: This line of code loads data into the 'movieRentalDataSet.Movie' table. You can move, or remove it, as needed.
             //this.movieTableAdapter.Fill(this.movieRentalDataSet.Movie);
 
             string connectionString = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
