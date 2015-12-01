@@ -36,7 +36,8 @@ namespace MIS220GroupProject
 
         private void toAcctInfoScreen_BTN_Click(object sender, EventArgs e)
         {
-
+            AccountInfo form = new AccountInfo(profile);
+            this.Hide();
         }
     }
 }

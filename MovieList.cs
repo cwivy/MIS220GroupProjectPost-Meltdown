@@ -15,7 +15,6 @@ namespace MIS220GroupProject
     public partial class MovieList : Form
     {
         AggActiveAccount profile;
-        string Title;
 
         public MovieList(AggActiveAccount prof)
         {
@@ -25,43 +24,9 @@ namespace MIS220GroupProject
         }
 
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-        //    string sqlIns = "SELECT Title, Genre, ReleaseDate, Rating FROM dbo.Movie WHERE title = '" + listBox1.Text + "';";
-        //    SqlConnection conDataBase = new SqlConnection(dbStr);
-        //    SqlCommand cmdIns = new SqlCommand(sqlIns, conDataBase);
-        //    SqlDataReader myReader;
-
-        //    try
-        //    {
-        //        conDataBase.Open();
-        //        myReader = cmdIns.ExecuteReader();
-
-        //        while (myReader.Read())
-        //        {
-        //            string mTitle = myReader.GetString("Title");
-        //            listBox1.Items.Add(mTitle);
-        //            string mGenre = myReader.GetString("Genre");
-        //            listBox1.Items.Add(mGenre);
-        //            string mReleaseDate = myReader.GetString("ReleaseDate");
-        //            listBox1.Items.Add(mReleaseDate);
-        //            string mRating = myReader.GetString("Rating");
-        //            listBox1.Items.Add(mRating);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        }
 
         private void MovieList_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'movieRentalDataSet.Movie' table. You can move, or remove it, as needed.
-            //this.movieTableAdapter.Fill(this.movieRentalDataSet.Movie);
-
             string connectionString = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
             string sql = "SELECT * FROM Movie";
 
@@ -77,10 +42,10 @@ namespace MIS220GroupProject
             }
 
         }
+        public string title;
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void returnTo_BOX_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,7 +74,7 @@ namespace MIS220GroupProject
 
         private void wishList_BTN_Click(object sender, EventArgs e)
         {
-            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + Title + "')";
+            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + title + "')";
 
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
             SqlConnection dbCon = new SqlConnection(dbStr);
@@ -133,5 +98,15 @@ namespace MIS220GroupProject
             }
 
         }
+
+        private void checkOut_BTN_Click(object sender, EventArgs e)
+        {
+            CheckOut frm = new CheckOut();
+            frm.title = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            frm.Show();
+            this.Hide();
+        }
+
+
     }
 }

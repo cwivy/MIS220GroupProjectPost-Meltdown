@@ -51,7 +51,7 @@
             // 
             // wishList_BTN
             // 
-            this.wishList_BTN.Location = new System.Drawing.Point(13, 309);
+            this.wishList_BTN.Location = new System.Drawing.Point(233, 276);
             this.wishList_BTN.Name = "wishList_BTN";
             this.wishList_BTN.Size = new System.Drawing.Size(158, 77);
             this.wishList_BTN.TabIndex = 1;
@@ -61,12 +61,13 @@
             // 
             // checkOut_BTN
             // 
-            this.checkOut_BTN.Location = new System.Drawing.Point(226, 309);
+            this.checkOut_BTN.Location = new System.Drawing.Point(446, 276);
             this.checkOut_BTN.Name = "checkOut_BTN";
             this.checkOut_BTN.Size = new System.Drawing.Size(158, 77);
             this.checkOut_BTN.TabIndex = 2;
             this.checkOut_BTN.Text = "Rent or Buy Movie";
             this.checkOut_BTN.UseVisualStyleBackColor = true;
+            this.checkOut_BTN.Click += new System.EventHandler(this.checkOut_BTN_Click);
             // 
             // returnTo_BOX
             // 
@@ -75,7 +76,7 @@
             "Home Page",
             "Wish List",
             "Account Information"});
-            this.returnTo_BOX.Location = new System.Drawing.Point(440, 309);
+            this.returnTo_BOX.Location = new System.Drawing.Point(664, 303);
             this.returnTo_BOX.Name = "returnTo_BOX";
             this.returnTo_BOX.Size = new System.Drawing.Size(121, 24);
             this.returnTo_BOX.TabIndex = 3;
@@ -103,7 +104,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(746, 213);
+            this.dataGridView1.Size = new System.Drawing.Size(1018, 213);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -169,7 +170,7 @@
             this.sortBy_DropBox.Items.AddRange(new object[] {
             "Genre",
             "Alphabetical"});
-            this.sortBy_DropBox.Location = new System.Drawing.Point(637, -3);
+            this.sortBy_DropBox.Location = new System.Drawing.Point(901, -3);
             this.sortBy_DropBox.Name = "sortBy_DropBox";
             this.sortBy_DropBox.Size = new System.Drawing.Size(121, 24);
             this.sortBy_DropBox.TabIndex = 5;
@@ -179,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 463);
+            this.ClientSize = new System.Drawing.Size(1042, 418);
             this.Controls.Add(this.sortBy_DropBox);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.returnTo_BOX);
