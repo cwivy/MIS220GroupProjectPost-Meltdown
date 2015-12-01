@@ -15,6 +15,7 @@ namespace MIS220GroupProject
     public partial class MovieList : Form
     {
         AggActiveAccount profile;
+        string Title;
 
         public MovieList(AggActiveAccount prof)
         {
@@ -101,6 +102,33 @@ namespace MIS220GroupProject
                 AccountInfo frm = new AccountInfo(profile);
                 frm.Show();
             }
+        }
+
+        private void wishList_BTN_Click(object sender, EventArgs e)
+        {
+            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + Title + "')";
+
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+                DataSet memberDataSet = new DataSet();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+                {
+                    cmd.Connection.Open();
+                    DataTable memberTable = new DataTable();
+                    memberTable.Load(cmd.ExecuteReader());
+                    //string tableName = "MemberInfoTable";
+                    memberDataSet.Tables.Add(memberTable);
+                }
+
+            }
+            finally
+            {
+                dbCon.Close();
+            }
+
         }
     }
 }
