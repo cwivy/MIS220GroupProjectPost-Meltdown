@@ -47,6 +47,7 @@ namespace MIS220GroupProject
                     {
                         double payment = Convert.ToDouble(makeAPaymentBox.Text);
                         makeAPaymentTrans(payment);
+                        displayBal();
                     }
                     else
                     {
@@ -72,10 +73,11 @@ namespace MIS220GroupProject
 
         private void makeAPaymentTrans(double p)
         {
-            if (balance - p >= 0)
-            {
-                balance -= p;
-            }
+            balance += p;
+            //if (balance - p >= 0)
+            //{
+            //    balance -= p;
+            //}
             //else
             //{
             //    MessageBox.Show("Transaction can't be completed because the balance would be less than zero!");

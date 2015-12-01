@@ -58,7 +58,7 @@
             this.accBalBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.accBalBox2.Size = new System.Drawing.Size(149, 76);
             this.accBalBox2.TabIndex = 3;
-            this.accBalBox2.Text = "0.0";
+            this.accBalBox2.Text = "";
             // 
             // label1
             // 
