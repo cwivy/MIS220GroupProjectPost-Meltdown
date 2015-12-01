@@ -265,10 +265,12 @@ namespace MIS220GroupProject
             this.Username = Convert.ToString(data["Username"]);
             this.MemberID = Convert.ToInt32(Convert.ToString(data["MemberID"]));
             this.Password = Convert.ToString(data["Password"]);
-            int buff = Convert.ToInt32(data["IsAdmin"]);
-            if (buff == 1)
+            string buff = Convert.ToString(data["IsAdmin"]);
+            if (buff == "1")
                 this.IsAdmin = true;
-            if (buff == 0)
+            if (buff == "0")
+                this.IsAdmin = false;
+            if (buff == "NULL")
                 this.IsAdmin = false;
 
         }

@@ -12,20 +12,31 @@ namespace MIS220GroupProject
 {
     public partial class MemberHome : Form
     {
+        AggActiveAccount profile;
 
         public MemberHome(AggActiveAccount mem)
         {
             InitializeComponent();
             this.Show();
-            AggActiveAccount member = new AggActiveAccount();
-            member = mem;
-            CopyObject2Form(member);
+            profile = mem;
+            CopyObject2Form(profile);
         }
 
         public void CopyObject2Form(AggActiveAccount userProfile)
         {
             memNameBox.Text = userProfile.FName + " " + userProfile.LName;
             accBalBox.Text = userProfile.Balance.ToString();
+        }
+
+        private void toMovieList_BTN_Click(object sender, EventArgs e)
+        {
+            MovieList form = new MovieList(profile);
+            form.Show();
+        }
+
+        private void toAcctInfoScreen_BTN_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

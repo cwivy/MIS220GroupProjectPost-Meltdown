@@ -19,7 +19,6 @@ namespace MIS220GroupProject
         public MovieList(AggActiveAccount prof)
         {
             InitializeComponent();
-            AggActiveAccount profile = new AggActiveAccount();
             profile = prof;
         }
 
@@ -99,7 +98,7 @@ namespace MIS220GroupProject
             if(returnTo_BOX.SelectedIndex == 2)
             {
                 this.Hide();
-                AccountInfo frm = new AccountInfo();
+                AccountInfo frm = new AccountInfo(profile);
                 frm.Show();
             }
         }
