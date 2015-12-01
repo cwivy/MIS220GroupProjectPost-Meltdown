@@ -74,5 +74,12 @@ namespace MIS220GroupProject
             AccountInfo form = new AccountInfo(profile);
             form.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AccountInfo form = new AccountInfo(profile);
+            this.Hide();
+            form.Show();
+        }
     }
 }

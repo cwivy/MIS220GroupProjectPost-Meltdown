@@ -31,7 +31,7 @@ namespace MIS220GroupProject
         {
             movieTitle_TXT.Text = movieSelect;
             currentBal_TXT.Text = prof.Balance.ToString();
-            afterBal_TXT.Text = Convert.ToString((prof.Balance) - (moviePrice));
+            afterBal_TXT.Text = Convert.ToString((prof.Balance) + (moviePrice));
             dueDateBox.Text = Convert.ToString(DateTime.Now.AddDays(rentLength));
 
         }
@@ -50,7 +50,8 @@ namespace MIS220GroupProject
 
         private void RunConfirmOrderSqlStatement(AggActiveAccount prof, string movieSelect, double moviePrice)
         {
-            //SQL Statement for creating new member
+            prof.Balance = Convert.ToDouble(afterBal_TXT.Text);
+            //SQL Statement for processing movie order
             string sqlProfileCreate =
                 //updating active user account balance by subtracting the movie price (math is already done in copyObjectToForm method)                
                 "update Account " +
@@ -71,13 +72,6 @@ namespace MIS220GroupProject
             {
                 //non-query
                 SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
-                //updating account
-                //cmdIns.Parameters.AddWithValue("@accountID", prof.AccId);
-                //cmdIns.Parameters.AddWithValue("@newBalance", Convert.ToDouble(afterBal_TXT.Text));
-                //new transaction                
-                //cmdIns.Parameters.AddWithValue("@title", movieSelect);
-                //cmdIns.Parameters.AddWithValue("@dueDate", dueDateBox.Text);
-                //cmdIns.Parameters.AddWithValue("@total", moviePrice);
 
                 dbCon.Open();
                 cmdIns.ExecuteNonQuery();

@@ -25,7 +25,7 @@ namespace MIS220GroupProject
         public void CopyObject2Form(AggActiveAccount userProfile)
         {
             memNameBox.Text = userProfile.FName + " " + userProfile.LName;
-            accBalBox.Text = userProfile.Balance.ToString();
+            accBalBox.Text = "$" + userProfile.Balance.ToString();
         }
 
         private void toMovieList_BTN_Click(object sender, EventArgs e)
@@ -42,7 +42,8 @@ namespace MIS220GroupProject
 
         private void toPaymentScreen_BTN_Click(object sender, EventArgs e)
         {
-            MakeAPayment makeAPayment = new MakeAPayment();
+            MakeAPayment makeAPayment = new MakeAPayment(profile);
+            this.Hide();
             makeAPayment.Show();
         }
     }
