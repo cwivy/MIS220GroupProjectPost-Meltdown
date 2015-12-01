@@ -8,7 +8,7 @@ using System.Data;
 
 namespace MIS220GroupProject
 {
-    class AggActiveAccount 
+    public class AggActiveAccount 
     {
         //member variables
         private int memId;
@@ -210,7 +210,7 @@ namespace MIS220GroupProject
             }
         }
 
-        public DataTable CreateAggDataTable(string userName, string password)
+        public static DataTable CreateAggDataTable(string userName, string password)
         {//This method pulls all relevant information for the user that logs in
 
             //creating the temp variables to pass the supplied username and password
@@ -240,7 +240,7 @@ namespace MIS220GroupProject
             }
         }
 
-        public void PopulateMember(DataRow data)
+        public void PopulateProfile(DataRow data)
         {
             //Populating Member members
             this.MemId = Convert.ToInt32(Convert.ToString(data["MemID"]));

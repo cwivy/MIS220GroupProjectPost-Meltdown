@@ -13,7 +13,7 @@ namespace MIS220GroupProject
     public partial class LoginScreen : Form
     {
         //Members--------------------------
-        private AggActiveAccount thisAGGAcc;
+        private AggActiveAccount userProfile;
         //constructors-------------------
         public LoginScreen()
         {
@@ -22,11 +22,11 @@ namespace MIS220GroupProject
 
         private void login_BTN_Click(object sender, EventArgs e)
         {
-            thisAGGAcc = new AggActiveAccount();
+            userProfile = new AggActiveAccount();
             DataTable memberData = new DataTable();
 
-            //Authenticates User
-            memberData = thisAGGAcc.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
+            //Creates DataTable with all relevant user information
+            memberData = AggActiveAccount.CreateAggDataTable(loginUserBox.Text, loginPassBox.Text);
 
             //if username/pass combo does not exist
             if (memberData.Rows.Count == 0)
@@ -38,6 +38,7 @@ namespace MIS220GroupProject
             else //User is authenticated
             {                
                 DataRow memberInfo = memberData.Rows[0];
+                userProfile.PopulateProfile(memberData.Rows[0]);
                 string MemberIDString = Convert.ToString(memberInfo["MemberID"]);
                 string LoginIDString = Convert.ToString(memberInfo["MemID"]);
                 string isAdminString = Convert.ToString(memberInfo["IsAdmin"]);
@@ -45,7 +46,7 @@ namespace MIS220GroupProject
                 if (LoginIDString == MemberIDString & isAdminString != "True")
                 {
                     this.Hide();
-                    new MemberHome(123, 123);
+                    new MemberHome(userProfile);
                 }
                 else if (LoginIDString == MemberIDString & isAdminString == "True")
                 {
@@ -53,9 +54,6 @@ namespace MIS220GroupProject
                     new AdminHome().Show();
                 }
             }
-
-            //thisAGGAcc.PopulateMember(memberDataSet.Tables[0].Rows[0]);
-            //thisAGGAcc.DisplayMember();
         }
 
         private void createAccount_BTN_Click(object sender, EventArgs e)
