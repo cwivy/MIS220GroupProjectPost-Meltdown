@@ -17,5 +17,25 @@ namespace MIS220GroupProject
             InitializeComponent();
             //adminNameBox.Text =
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is currently being built! Please check back soon!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is currently being built! Please check back soon!");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is currently being built! Please check back soon!");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This feature is currently being built! Please check back soon!");
+        }
     }
 }
