@@ -36,6 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.currentBal_TXT = new System.Windows.Forms.TextBox();
             this.afterBal_TXT = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dueDateBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -132,11 +134,34 @@
             this.afterBal_TXT.TabIndex = 7;
             this.afterBal_TXT.UseWaitCursor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(114, 201);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Due Date:";
+            this.label4.UseWaitCursor = true;
+            // 
+            // dueDateBox
+            // 
+            this.dueDateBox.Location = new System.Drawing.Point(196, 199);
+            this.dueDateBox.Margin = new System.Windows.Forms.Padding(4);
+            this.dueDateBox.Name = "dueDateBox";
+            this.dueDateBox.ReadOnly = true;
+            this.dueDateBox.Size = new System.Drawing.Size(132, 22);
+            this.dueDateBox.TabIndex = 9;
+            this.dueDateBox.UseWaitCursor = true;
+            // 
             // Checkout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(465, 324);
+            this.Controls.Add(this.dueDateBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.afterBal_TXT);
             this.Controls.Add(this.currentBal_TXT);
             this.Controls.Add(this.label3);
@@ -164,5 +189,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox currentBal_TXT;
         private System.Windows.Forms.TextBox afterBal_TXT;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox dueDateBox;
     }
 }

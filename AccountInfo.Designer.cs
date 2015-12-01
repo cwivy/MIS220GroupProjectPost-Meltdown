@@ -31,7 +31,6 @@
             this.goTo_DropBox = new System.Windows.Forms.ComboBox();
             this.billingHistory_BTN = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.birthDate_TXT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.phone_TXT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.lastName_TXT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.firstName_TXT = new System.Windows.Forms.TextBox();
-            this.save_BTN = new System.Windows.Forms.Button();
+            this.updateAccount_BTN = new System.Windows.Forms.Button();
             this.activeOrders_BTN = new System.Windows.Forms.Button();
             this.paymentType_LBL = new System.Windows.Forms.Label();
             this.memStatus_LBL = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.paymentType_TXT = new System.Windows.Forms.TextBox();
             this.memStatus_TXT = new System.Windows.Forms.TextBox();
             this.cardNum_TXT = new System.Windows.Forms.TextBox();
+            this.birthDate_TXT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // goTo_DropBox
@@ -93,15 +93,6 @@
             this.label10.Size = new System.Drawing.Size(64, 15);
             this.label10.TabIndex = 61;
             this.label10.Text = "Birth Date:";
-            // 
-            // birthDate_TXT
-            // 
-            this.birthDate_TXT.Location = new System.Drawing.Point(433, 128);
-            this.birthDate_TXT.Margin = new System.Windows.Forms.Padding(2);
-            this.birthDate_TXT.Name = "birthDate_TXT";
-            this.birthDate_TXT.ReadOnly = true;
-            this.birthDate_TXT.Size = new System.Drawing.Size(170, 20);
-            this.birthDate_TXT.TabIndex = 60;
             // 
             // label8
             // 
@@ -263,15 +254,16 @@
             this.firstName_TXT.Size = new System.Drawing.Size(170, 20);
             this.firstName_TXT.TabIndex = 42;
             // 
-            // save_BTN
+            // updateAccount_BTN
             // 
-            this.save_BTN.Location = new System.Drawing.Point(398, 238);
-            this.save_BTN.Margin = new System.Windows.Forms.Padding(2);
-            this.save_BTN.Name = "save_BTN";
-            this.save_BTN.Size = new System.Drawing.Size(123, 62);
-            this.save_BTN.TabIndex = 41;
-            this.save_BTN.Text = "Save";
-            this.save_BTN.UseVisualStyleBackColor = true;
+            this.updateAccount_BTN.Location = new System.Drawing.Point(398, 238);
+            this.updateAccount_BTN.Margin = new System.Windows.Forms.Padding(2);
+            this.updateAccount_BTN.Name = "updateAccount_BTN";
+            this.updateAccount_BTN.Size = new System.Drawing.Size(123, 62);
+            this.updateAccount_BTN.TabIndex = 41;
+            this.updateAccount_BTN.Text = "Update Account Information";
+            this.updateAccount_BTN.UseVisualStyleBackColor = true;
+            this.updateAccount_BTN.Click += new System.EventHandler(this.updateAccount_BTN_Click);
             // 
             // activeOrders_BTN
             // 
@@ -343,6 +335,15 @@
             this.cardNum_TXT.Size = new System.Drawing.Size(170, 20);
             this.cardNum_TXT.TabIndex = 34;
             // 
+            // birthDate_TXT
+            // 
+            this.birthDate_TXT.Location = new System.Drawing.Point(433, 128);
+            this.birthDate_TXT.Margin = new System.Windows.Forms.Padding(2);
+            this.birthDate_TXT.Name = "birthDate_TXT";
+            this.birthDate_TXT.ReadOnly = true;
+            this.birthDate_TXT.Size = new System.Drawing.Size(170, 20);
+            this.birthDate_TXT.TabIndex = 60;
+            // 
             // AccountInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +369,7 @@
             this.Controls.Add(this.lastName_TXT);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstName_TXT);
-            this.Controls.Add(this.save_BTN);
+            this.Controls.Add(this.updateAccount_BTN);
             this.Controls.Add(this.activeOrders_BTN);
             this.Controls.Add(this.paymentType_LBL);
             this.Controls.Add(this.memStatus_LBL);
@@ -389,7 +390,6 @@
         private System.Windows.Forms.ComboBox goTo_DropBox;
         private System.Windows.Forms.Button billingHistory_BTN;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox birthDate_TXT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox phone_TXT;
         private System.Windows.Forms.Label label7;
@@ -406,7 +406,7 @@
         private System.Windows.Forms.TextBox lastName_TXT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox firstName_TXT;
-        private System.Windows.Forms.Button save_BTN;
+        private System.Windows.Forms.Button updateAccount_BTN;
         private System.Windows.Forms.Button activeOrders_BTN;
         private System.Windows.Forms.Label paymentType_LBL;
         private System.Windows.Forms.Label memStatus_LBL;
@@ -414,5 +414,6 @@
         private System.Windows.Forms.TextBox paymentType_TXT;
         private System.Windows.Forms.TextBox memStatus_TXT;
         private System.Windows.Forms.TextBox cardNum_TXT;
+        private System.Windows.Forms.TextBox birthDate_TXT;
     }
 }

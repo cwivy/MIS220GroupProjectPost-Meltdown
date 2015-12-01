@@ -155,7 +155,7 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
-        public static void CreateNewProfile(string cardNumber, string paymentType, string fName, string lName, string dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string userName, string password)
+        public static void CreateNewProfile(string cardNumber, string paymentType, string fName, string lName, DateTime dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string userName, string password)
         {           
             //SQL Statement for creating new member
             string sqlProfileCreate =
