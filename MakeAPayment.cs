@@ -73,15 +73,15 @@ namespace MIS220GroupProject
 
         private void makeAPaymentTrans(double p)
         {
-            balance += p;
-            //if (balance - p >= 0)
-            //{
-            //    balance -= p;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Transaction can't be completed because the balance would be less than zero!");
-            //}
+            //balance += p;
+            if (balance - p >= 0)
+            {
+                balance -= p;
+            }
+            else
+            {
+                balance -= p;
+            }
         }
 
         //will return true if user enters a valid number
