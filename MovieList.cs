@@ -16,44 +16,20 @@ namespace MIS220GroupProject
     {
         int memID;
         int accID;
+        string title;
+
+        public string Title
+        {
+            get {  return title; }
+
+            set  { title = value;}
+        }
 
         public MovieList()
         {
             InitializeComponent();
         }
 
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-        //    string sqlIns = "SELECT Title, Genre, ReleaseDate, Rating FROM dbo.Movie WHERE title = '" + listBox1.Text + "';";
-        //    SqlConnection conDataBase = new SqlConnection(dbStr);
-        //    SqlCommand cmdIns = new SqlCommand(sqlIns, conDataBase);
-        //    SqlDataReader myReader;
-
-        //    try
-        //    {
-        //        conDataBase.Open();
-        //        myReader = cmdIns.ExecuteReader();
-
-        //        while (myReader.Read())
-        //        {
-        //            string mTitle = myReader.GetString("Title");
-        //            listBox1.Items.Add(mTitle);
-        //            string mGenre = myReader.GetString("Genre");
-        //            listBox1.Items.Add(mGenre);
-        //            string mReleaseDate = myReader.GetString("ReleaseDate");
-        //            listBox1.Items.Add(mReleaseDate);
-        //            string mRating = myReader.GetString("Rating");
-        //            listBox1.Items.Add(mRating);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        }
 
         private void MovieList_Load(object sender, EventArgs e)
         {
@@ -93,7 +69,8 @@ namespace MIS220GroupProject
             if(returnTo_BOX.SelectedIndex == 1)
             {
                 this.Hide();
-
+                WishList frm = new WishList();
+                frm.Show();
             }
             if(returnTo_BOX.SelectedIndex == 2)
             {
@@ -101,6 +78,33 @@ namespace MIS220GroupProject
                 AccountInfo frm = new AccountInfo();
                 frm.Show();
             }
+        }
+
+        private void wishList_BTN_Click(object sender, EventArgs e)
+        {
+            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + Title + "')";
+
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+                DataSet memberDataSet = new DataSet();
+                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+                {
+                    cmd.Connection.Open();
+                    DataTable memberTable = new DataTable();
+                    memberTable.Load(cmd.ExecuteReader());
+                    //string tableName = "MemberInfoTable";
+                    memberDataSet.Tables.Add(memberTable);
+                }
+              
+            }
+            finally
+            {
+                dbCon.Close();
+            }
+
         }
     }
 }
