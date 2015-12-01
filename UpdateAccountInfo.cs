@@ -68,7 +68,7 @@ namespace MIS220GroupProject
         {
             profile = CopyForm2Object(profile);
             //SQL Stuff to update Account            
-            UpdateProfileInfo(cardNum_TXT.Text, profile.PaymentType, firstName_TXT.Text, lastName_TXT.Text, address1_TXT.Text, address2_TXT.Text, city_TXT.Text, state_TXT.Text, Convert.ToInt32(cardNum_TXT.Text), phone_TXT.Text, passwordBox.Text);
+            UpdateProfileInfo(cardNum_TXT.Text, profile.PaymentType, firstName_TXT.Text, lastName_TXT.Text, address1_TXT.Text, address2_TXT.Text, city_TXT.Text, state_TXT.Text, Convert.ToInt32(cardNum_TXT.Text), phone_TXT.Text, passwordBox.Text, profile.AccId, profile.MemberID, profile.Username);
             
             this.Hide();
             AccountInfo form = new AccountInfo(profile);
@@ -82,19 +82,22 @@ namespace MIS220GroupProject
             form.Show();
         }
 
-        public static void UpdateProfileInfo(string cardNumber, int paymentType, string fName, string lName, string address1, string address2, string city, string state, Int32 zip, string phone, string password)
+        public static void UpdateProfileInfo(string cardNumber, int paymentType, string fName, string lName, string address1, string address2, string city, string state, Int32 zip, string phone, string password, int accountID, int memberID, string userName)
         {
             //SQL Statement for updating member info
             string sqlProfileCreate =
                 //updating account with info provided on form
                 "update Account " +
                 "set CardNumber = @cardNumber, PaymentType = @paymentType " +
+                "where AccountID = '" + accountID + "' " +
                 //updating member info
                 "update Member " +
                 "set FirstName = @firstName, LastName = @lastName, Address1 = @address1, Address2 = @address2, City = @city, State = @state, Zip = @zip, Phone = @phone " +
+                "where MemID = '" + memberID + "' " +
                 //creates a login with supplied username and password. Admin status is set to 'null' as default
                 "update Login " +
-                "set Password = @password;";
+                "set Password = @password " +
+                "where Username = '" + userName + "'; ";
 
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
