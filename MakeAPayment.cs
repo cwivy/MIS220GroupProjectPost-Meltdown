@@ -26,16 +26,18 @@ namespace MIS220GroupProject
         public void CopyObject2Form(AggActiveAccount profile)
         {
             accBalBox2.Text = "$" + profile.Balance.ToString();
+            cardNumberBox.Text = profile.CardNum.ToString();
         }
 
         private void submitButt_Click(object sender, EventArgs e)
         {
             profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
             //string sqlQuery = "UPDATE Account.Balance("profile.Balance") WHERE ";
-
-            CopyObject2Form(profile);
+           CopyObject2Form(profile);
             
         }
+            
+        
 
         private void makeAPaymentTrans(double p)
         {
