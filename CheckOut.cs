@@ -35,5 +35,10 @@ namespace MIS220GroupProject
             MovieList movieListForm = new MovieList(profile);
             movieListForm.Show();            
         }
+
+        private void checkoutConfirm_BTN_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -97,7 +97,6 @@ namespace MIS220GroupProject
         {
             DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
             movieSelect = Convert.ToString(row.Cells[0].Value);
-
         }
 
         private void checkOut_BTN_Click(object sender, EventArgs e)
