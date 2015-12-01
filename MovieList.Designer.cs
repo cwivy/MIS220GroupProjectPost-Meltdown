@@ -53,10 +53,10 @@
             // 
             // wishList_BTN
             // 
-            this.wishList_BTN.Location = new System.Drawing.Point(15, 388);
-            this.wishList_BTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.wishList_BTN.Location = new System.Drawing.Point(11, 315);
+            this.wishList_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.wishList_BTN.Name = "wishList_BTN";
-            this.wishList_BTN.Size = new System.Drawing.Size(157, 78);
+            this.wishList_BTN.Size = new System.Drawing.Size(118, 63);
             this.wishList_BTN.TabIndex = 1;
             this.wishList_BTN.Text = "Add to Wish List";
             this.wishList_BTN.UseVisualStyleBackColor = true;
@@ -64,10 +64,10 @@
             // 
             // checkOut_BTN
             // 
-            this.checkOut_BTN.Location = new System.Drawing.Point(215, 388);
-            this.checkOut_BTN.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.checkOut_BTN.Location = new System.Drawing.Point(161, 315);
+            this.checkOut_BTN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkOut_BTN.Name = "checkOut_BTN";
-            this.checkOut_BTN.Size = new System.Drawing.Size(157, 78);
+            this.checkOut_BTN.Size = new System.Drawing.Size(118, 63);
             this.checkOut_BTN.TabIndex = 2;
             this.checkOut_BTN.Text = "Rent or Buy Movie";
             this.checkOut_BTN.UseVisualStyleBackColor = true;
@@ -91,14 +91,14 @@
             this.daysForRentDataGridViewTextBoxColumn,
             this.rentalPriceDataGridViewTextBoxColumn});
             this.movieListDataGrid.DataSource = this.movieBindingSource;
-            this.movieListDataGrid.Location = new System.Drawing.Point(15, 58);
-            this.movieListDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.movieListDataGrid.Location = new System.Drawing.Point(11, 47);
+            this.movieListDataGrid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.movieListDataGrid.MultiSelect = false;
             this.movieListDataGrid.Name = "movieListDataGrid";
             this.movieListDataGrid.ReadOnly = true;
             this.movieListDataGrid.RowTemplate.Height = 24;
             this.movieListDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.movieListDataGrid.Size = new System.Drawing.Size(1019, 308);
+            this.movieListDataGrid.Size = new System.Drawing.Size(764, 250);
             this.movieListDataGrid.TabIndex = 4;
             this.movieListDataGrid.SelectionChanged += new System.EventHandler(this.movieListDataGrid_SelectionChanged);
             // 
@@ -177,14 +177,13 @@
             "Romantic-Comedy",
             "Scifi",
             "Thriller"});
-            this.sortByGenre_DropBox.Location = new System.Drawing.Point(417, 388);
-            this.sortByGenre_DropBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sortByGenre_DropBox.Location = new System.Drawing.Point(313, 315);
+            this.sortByGenre_DropBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sortByGenre_DropBox.Name = "sortByGenre_DropBox";
-            this.sortByGenre_DropBox.Size = new System.Drawing.Size(121, 24);
+            this.sortByGenre_DropBox.Size = new System.Drawing.Size(92, 21);
             this.sortByGenre_DropBox.Sorted = true;
             this.sortByGenre_DropBox.TabIndex = 5;
             this.sortByGenre_DropBox.Text = "Sort By Genre:";
-            this.sortByGenre_DropBox.SelectedIndexChanged += new System.EventHandler(this.sortByGenre_DropBox_SelectedIndexChanged);
             // 
             // movieRentalDataSet1
             // 
@@ -194,10 +193,9 @@
             // backToHome_BTN
             // 
             this.backToHome_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backToHome_BTN.Location = new System.Drawing.Point(33, 11);
-            this.backToHome_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backToHome_BTN.Location = new System.Drawing.Point(25, 9);
             this.backToHome_BTN.Name = "backToHome_BTN";
-            this.backToHome_BTN.Size = new System.Drawing.Size(83, 28);
+            this.backToHome_BTN.Size = new System.Drawing.Size(62, 23);
             this.backToHome_BTN.TabIndex = 65;
             this.backToHome_BTN.Text = "<-- Home";
             this.backToHome_BTN.UseVisualStyleBackColor = true;
@@ -205,15 +203,15 @@
             // 
             // MovieList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 477);
+            this.ClientSize = new System.Drawing.Size(797, 388);
             this.Controls.Add(this.backToHome_BTN);
             this.Controls.Add(this.sortByGenre_DropBox);
             this.Controls.Add(this.movieListDataGrid);
             this.Controls.Add(this.checkOut_BTN);
             this.Controls.Add(this.wishList_BTN);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MovieList";
             this.Text = "MovieList";
             this.Load += new System.EventHandler(this.MovieList_Load);

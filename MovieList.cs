@@ -44,29 +44,6 @@ namespace MIS220GroupProject
             }
         }
 
-        private void returnTo_BOX_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (returnTo_BOX.SelectedIndex == 0)
-            {
-                this.Hide();
-                MemberHome frm = new MemberHome(profile);
-                frm.Show();
-
-            }
-            if (returnTo_BOX.SelectedIndex == 1)
-            {
-                this.Hide();
-                WishList frm = new WishList(profile);
-                frm.Show();
-
-            }
-            if (returnTo_BOX.SelectedIndex == 2)
-            {
-                this.Hide();
-                AccountInfo frm = new AccountInfo(profile);
-                frm.Show();
-            }
-        }
 
         private void wishList_BTN_Click(object sender, EventArgs e)
         {
@@ -109,7 +86,7 @@ namespace MIS220GroupProject
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
          
-	       Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
+           Checkout frm = new Checkout(profile, movieSelect, moviePrice, daysForRent);
             //frm.title = movieListDataGrid.CurrentRow.Cells[0].Value.ToString();
             //frm.rentalPrice = movieListDataGrid.CurrentRow.Cells[6].Value.ToString();
 
@@ -129,5 +106,11 @@ namespace MIS220GroupProject
             }
         
             }
+
+        private void backToHome_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MemberHome form = new MemberHome(profile);
         }
     }
+  }
