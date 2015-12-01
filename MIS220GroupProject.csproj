@@ -121,6 +121,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Reward.cs" />
+    <Compile Include="UpdateAccountInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateAccountInfo.Designer.cs">
+      <DependentUpon>UpdateAccountInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="WishList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewMemForm.resx">
       <DependentUpon>NewMemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateAccountInfo.resx">
+      <DependentUpon>UpdateAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WishList.resx">
       <DependentUpon>WishList.cs</DependentUpon>
