@@ -14,19 +14,21 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile;
         string movie;
-        public Checkout(AggActiveAccount prof, string movieSelect)
+        double price;
+        public Checkout(AggActiveAccount prof, string movieSelect, double moviePrice)
         {
             InitializeComponent();
             profile = prof;
             movie = movieSelect;
-            CopyObject2Form(movieSelect, profile);
+            price = moviePrice;
+            CopyObject2Form(movieSelect, profile, moviePrice);
         }
 
-        public void CopyObject2Form(string movieSelect, AggActiveAccount prof)
+        public void CopyObject2Form(string movieSelect, AggActiveAccount prof, double moviePrice)
         {
             movieTitle_TXT.Text = movieSelect;
             currentBal_TXT.Text = prof.Balance.ToString();
-            
+            afterBal_TXT.Text = Convert.ToString((prof.Balance) - (moviePrice));         
         }
 
         private void checkoutCancel_BTN_Click(object sender, EventArgs e)
