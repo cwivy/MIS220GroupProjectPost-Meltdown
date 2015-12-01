@@ -32,7 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SqlServer.Dmf, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -60,11 +59,11 @@
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
     <Compile Include="AggActiveAccount.cs" />
-    <Compile Include="CheckOut.cs">
+    <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CheckOut.Designer.cs">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -128,8 +127,8 @@
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CheckOut.resx">
-      <DependentUpon>CheckOut.cs</DependentUpon>
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>

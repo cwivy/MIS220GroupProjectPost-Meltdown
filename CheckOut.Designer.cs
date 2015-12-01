@@ -1,6 +1,6 @@
 ﻿namespace MIS220GroupProject
 {
-    partial class CheckOut
+    partial class Checkout
     {
         /// <summary>
         /// Required designer variable.
@@ -28,63 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.yes_BTN = new System.Windows.Forms.Button();
-            this.no_BTN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.movieName_TXT = new System.Windows.Forms.TextBox();
+            this.movieTitle_TXT = new System.Windows.Forms.TextBox();
+            this.checkoutConfirm_BTN = new System.Windows.Forms.Button();
+            this.checkoutCancel_BTN = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.currentBal_TXT = new System.Windows.Forms.TextBox();
+            this.afterBal_TXT = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // yes_BTN
-            // 
-            this.yes_BTN.Location = new System.Drawing.Point(149, 165);
-            this.yes_BTN.Name = "yes_BTN";
-            this.yes_BTN.Size = new System.Drawing.Size(75, 23);
-            this.yes_BTN.TabIndex = 0;
-            this.yes_BTN.Text = "Yes";
-            this.yes_BTN.UseVisualStyleBackColor = true;
-            this.yes_BTN.Click += new System.EventHandler(this.yes_BTN_Click);
-            // 
-            // no_BTN
-            // 
-            this.no_BTN.Location = new System.Drawing.Point(39, 165);
-            this.no_BTN.Name = "no_BTN";
-            this.no_BTN.Size = new System.Drawing.Size(75, 23);
-            this.no_BTN.TabIndex = 1;
-            this.no_BTN.Text = "No";
-            this.no_BTN.UseVisualStyleBackColor = true;
-            this.no_BTN.Click += new System.EventHandler(this.no_BTN_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 32);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(283, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Are you sure you\'d like to rent the following:";
+            this.label1.Size = new System.Drawing.Size(164, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "You are about to rent:";
             // 
-            // movieName_TXT
+            // movieTitle_TXT
             // 
-            this.movieName_TXT.Location = new System.Drawing.Point(12, 77);
-            this.movieName_TXT.Name = "movieName_TXT";
-            this.movieName_TXT.ReadOnly = true;
-            this.movieName_TXT.Size = new System.Drawing.Size(243, 22);
-            this.movieName_TXT.TabIndex = 3;
-            this.movieName_TXT.TabStop = false;
-            this.movieName_TXT.TextChanged += new System.EventHandler(this.movieName_TXT_TextChanged);
+            this.movieTitle_TXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movieTitle_TXT.Location = new System.Drawing.Point(75, 57);
+            this.movieTitle_TXT.Name = "movieTitle_TXT";
+            this.movieTitle_TXT.ReadOnly = true;
+            this.movieTitle_TXT.Size = new System.Drawing.Size(198, 20);
+            this.movieTitle_TXT.TabIndex = 1;
+            this.movieTitle_TXT.Text = "Movie Name Here";
             // 
-            // CheckOut
+            // checkoutConfirm_BTN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.checkoutConfirm_BTN.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkoutConfirm_BTN.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.checkoutConfirm_BTN.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.checkoutConfirm_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutConfirm_BTN.Location = new System.Drawing.Point(202, 186);
+            this.checkoutConfirm_BTN.Name = "checkoutConfirm_BTN";
+            this.checkoutConfirm_BTN.Size = new System.Drawing.Size(94, 36);
+            this.checkoutConfirm_BTN.TabIndex = 2;
+            this.checkoutConfirm_BTN.Text = "Confirm";
+            this.checkoutConfirm_BTN.UseVisualStyleBackColor = false;
+            // 
+            // checkoutCancel_BTN
+            // 
+            this.checkoutCancel_BTN.Location = new System.Drawing.Point(58, 193);
+            this.checkoutCancel_BTN.Name = "checkoutCancel_BTN";
+            this.checkoutCancel_BTN.Size = new System.Drawing.Size(75, 23);
+            this.checkoutCancel_BTN.TabIndex = 3;
+            this.checkoutCancel_BTN.Text = "Cancel";
+            this.checkoutCancel_BTN.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(55, 113);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Current Balance:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(33, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Balance After Rental:";
+            // 
+            // currentBal_TXT
+            // 
+            this.currentBal_TXT.Location = new System.Drawing.Point(147, 110);
+            this.currentBal_TXT.Name = "currentBal_TXT";
+            this.currentBal_TXT.ReadOnly = true;
+            this.currentBal_TXT.Size = new System.Drawing.Size(100, 20);
+            this.currentBal_TXT.TabIndex = 6;
+            // 
+            // afterBal_TXT
+            // 
+            this.afterBal_TXT.Location = new System.Drawing.Point(147, 136);
+            this.afterBal_TXT.Name = "afterBal_TXT";
+            this.afterBal_TXT.ReadOnly = true;
+            this.afterBal_TXT.Size = new System.Drawing.Size(100, 20);
+            this.afterBal_TXT.TabIndex = 7;
+            // 
+            // Checkout
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Controls.Add(this.movieName_TXT);
+            this.ClientSize = new System.Drawing.Size(349, 263);
+            this.Controls.Add(this.afterBal_TXT);
+            this.Controls.Add(this.currentBal_TXT);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.checkoutCancel_BTN);
+            this.Controls.Add(this.checkoutConfirm_BTN);
+            this.Controls.Add(this.movieTitle_TXT);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.no_BTN);
-            this.Controls.Add(this.yes_BTN);
-            this.Name = "CheckOut";
-            this.Text = "CheckOut";
-            this.Load += new System.EventHandler(this.CheckOut_Load);
+            this.Name = "Checkout";
+            this.Text = "Checkout";
+            this.UseWaitCursor = true;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +137,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button yes_BTN;
-        private System.Windows.Forms.Button no_BTN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox movieName_TXT;
+        private System.Windows.Forms.TextBox movieTitle_TXT;
+        private System.Windows.Forms.Button checkoutConfirm_BTN;
+        private System.Windows.Forms.Button checkoutCancel_BTN;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox currentBal_TXT;
+        private System.Windows.Forms.TextBox afterBal_TXT;
     }
 }

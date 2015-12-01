@@ -15,6 +15,7 @@ namespace MIS220GroupProject
     public partial class MovieList : Form
     {
         AggActiveAccount profile;
+        string movieSelect;
 
         public MovieList(AggActiveAccount prof)
         {
@@ -22,8 +23,6 @@ namespace MIS220GroupProject
             this.Show();
             profile = prof;
         }
-
-
 
         private void MovieList_Load(object sender, EventArgs e)
         {
@@ -37,15 +36,10 @@ namespace MIS220GroupProject
                 connection.Open();
                 var myTable = new DataTable();
                 adapter.Fill(myTable);
-                dataGridView1.DataSource = myTable;
+                movieListDataGrid.DataSource = myTable;
 
             }
 
-        }
-        public string title;
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
         }
 
         private void returnTo_BOX_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,40 +68,45 @@ namespace MIS220GroupProject
 
         private void wishList_BTN_Click(object sender, EventArgs e)
         {
-            string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + title + "')";
+        //    string sqlQuery = "INSERT INTO WishList(Title) VALUES('" + title + "')";
 
-            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
-            SqlConnection dbCon = new SqlConnection(dbStr);
+        //    string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
+        //    SqlConnection dbCon = new SqlConnection(dbStr);
 
-            try
-            {
-                DataSet memberDataSet = new DataSet();
-                using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
-                {
-                    cmd.Connection.Open();
-                    DataTable memberTable = new DataTable();
-                    memberTable.Load(cmd.ExecuteReader());
-                    //string tableName = "MemberInfoTable";
-                    memberDataSet.Tables.Add(memberTable);
-                }
+        //    try
+        //    {
+        //        DataSet memberDataSet = new DataSet();
+        //        using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
+        //        {
+        //            cmd.Connection.Open();
+        //            DataTable memberTable = new DataTable();
+        //            memberTable.Load(cmd.ExecuteReader());
+        //            //string tableName = "MemberInfoTable";
+        //            memberDataSet.Tables.Add(memberTable);
+        //        }
 
-            }
-            finally
-            {
-                dbCon.Close();
-            }
+        //    }
+        //    finally
+        //    {
+        //        dbCon.Close();
+        //    }
 
         }
 
-        public string rentalPrice;
-
         private void checkOut_BTN_Click(object sender, EventArgs e)
         {
-            CheckOut frm = new CheckOut();
-            frm.title = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            frm.rentalPrice = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            Checkout frm = new Checkout(profile, movieSelect);
+            //frm.title = movieListDataGrid.CurrentRow.Cells[0].Value.ToString();
+            //frm.rentalPrice = movieListDataGrid.CurrentRow.Cells[6].Value.ToString();
             frm.Show();
             this.Hide();
+        }
+
+        private void movieListDataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewRow row = movieListDataGrid.Rows[movieListDataGrid.SelectedCells[0].RowIndex];
+            movieSelect = Convert.ToString(row.Cells[0].Value);
+
         }
 
 
