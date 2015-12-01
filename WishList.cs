@@ -17,8 +17,13 @@ namespace MIS220GroupProject
         AggActiveAccount profile = new AggActiveAccount();
 
         public WishList()
+        AggActiveAccount profile;
+
         {
             InitializeComponent();
+            this.Show();
+            profile = mem;
+            CopyObject2Form(profile);
         }
 
         private void WishList_Load(object sender, EventArgs e)
@@ -42,6 +47,7 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 0)
             {
                 this.Hide();
+
                 MemberHome frm = new MemberHome(profile);
                 frm.Show();
 
@@ -49,14 +55,14 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 1)
             {
                 this.Hide();
-                MovieList frm = new MovieList();
+                MovieList frm = new MovieList(prof);
                 frm.Show();
             }
             if (returnTo_BOX.SelectedIndex == 2)
             {
                 this.Hide();
-                AccountInfo frm = new AccountInfo(profile);
-                frm.Show();
+               AccountInfo frm = new AccountInfo(profile);
+               frm.Show();
             }
         }
     }
