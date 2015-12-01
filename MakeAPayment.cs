@@ -33,6 +33,7 @@ namespace MIS220GroupProject
 
         private void submitButt_Click(object sender, EventArgs e)
         {
+            profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
             //SQL Statement for processing an account payment
             string sqlProfileCreate =
                 "update Account " +
@@ -65,8 +66,8 @@ namespace MIS220GroupProject
                 dbCon.Close();
                 MessageBox.Show("Your order has been confirmed! Thank you for your business!");
                 this.Hide();
-                MovieList movieListForm = new MovieList(profile);
-                movieListForm.Show();
+                MemberHome form = new MemberHome(profile);
+                form.Show();
             }            
         }
 
