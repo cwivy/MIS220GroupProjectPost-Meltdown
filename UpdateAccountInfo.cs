@@ -42,9 +42,7 @@ namespace MIS220GroupProject
             if (prof.PaymentType == 1)
                 cardTypeDropBox.Text = "Credit";
             if (prof.PaymentType == 0)
-                cardTypeDropBox.Text = "Debit";
-            //Date joined..?
-            dateTimePicker1.Value = prof.DateOfBirth;
+                cardTypeDropBox.Text = "Debit";                       
             passwordBox.Text = prof.Password;
         }
 
@@ -69,8 +67,8 @@ namespace MIS220GroupProject
         private void saveAcctInfo_BTN_Click(object sender, EventArgs e)
         {
             profile = CopyForm2Object(profile);
-            //SQL Stuff to update Account
-            UpdateProfileInfo(cardNum_TXT.Text, profile.PaymentType, profile.FName, profile.LName, profile.DateOfBirth, profile.Address1, profile.Address2, profile.City, profile.State, profile.Zip, profile.Phone, profile.Password);
+            //SQL Stuff to update Account            
+            UpdateProfileInfo(cardNum_TXT.Text, profile.PaymentType, firstName_TXT.Text, lastName_TXT.Text, address1_TXT.Text, address2_TXT.Text, city_TXT.Text, state_TXT.Text, Convert.ToInt32(cardNum_TXT.Text), phone_TXT.Text, passwordBox.Text);
             
             this.Hide();
             AccountInfo form = new AccountInfo(profile);
@@ -84,7 +82,7 @@ namespace MIS220GroupProject
             form.Show();
         }
 
-        public static void UpdateProfileInfo(string cardNumber, int paymentType, string fName, string lName, DateTime dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string password)
+        public static void UpdateProfileInfo(string cardNumber, int paymentType, string fName, string lName, string address1, string address2, string city, string state, Int32 zip, string phone, string password)
         {
             //SQL Statement for updating member info
             string sqlProfileCreate =
@@ -93,7 +91,7 @@ namespace MIS220GroupProject
                 "set CardNumber = @cardNumber, PaymentType = @paymentType " +
                 //updating member info
                 "update Member " +
-                "set FirstName = @firstName, LastName = @lastName, DOB = @DOB, Address1 = @address1, Address2 = @address2, City = @city, State = @state, Zip = @zip, Phone = @phone " +
+                "set FirstName = @firstName, LastName = @lastName, Address1 = @address1, Address2 = @address2, City = @city, State = @state, Zip = @zip, Phone = @phone " +
                 //creates a login with supplied username and password. Admin status is set to 'null' as default
                 "update Login " +
                 "set Password = @password;";
@@ -111,8 +109,7 @@ namespace MIS220GroupProject
                 cmdIns.Parameters.AddWithValue("@paymentType", paymentType);
                 //update member
                 cmdIns.Parameters.AddWithValue("@firstName", fName);
-                cmdIns.Parameters.AddWithValue("@lastName", lName);
-                cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
+                cmdIns.Parameters.AddWithValue("@lastName", lName);                
                 cmdIns.Parameters.AddWithValue("@address1", address1);
                 cmdIns.Parameters.AddWithValue("@address2", address2);
                 cmdIns.Parameters.AddWithValue("@city", city);

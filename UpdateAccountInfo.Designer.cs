@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.phone_TXT = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,23 +47,12 @@
             this.paymentType_LBL = new System.Windows.Forms.Label();
             this.carNum_LBL = new System.Windows.Forms.Label();
             this.cardNum_TXT = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.saveAcctInfo_BTN = new System.Windows.Forms.Button();
             this.cardTypeDropBox = new System.Windows.Forms.ComboBox();
             this.backButton = new System.Windows.Forms.Button();
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(473, 183);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 17);
-            this.label10.TabIndex = 85;
-            this.label10.Text = "Birth Date:";
             // 
             // label8
             // 
@@ -238,18 +226,10 @@
             this.cardNum_TXT.Size = new System.Drawing.Size(225, 22);
             this.cardNum_TXT.TabIndex = 62;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(564, 179);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(265, 22);
-            this.dateTimePicker1.TabIndex = 86;
-            // 
             // saveAcctInfo_BTN
             // 
             this.saveAcctInfo_BTN.Location = new System.Drawing.Point(581, 229);
-            this.saveAcctInfo_BTN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.saveAcctInfo_BTN.Margin = new System.Windows.Forms.Padding(4);
             this.saveAcctInfo_BTN.Name = "saveAcctInfo_BTN";
             this.saveAcctInfo_BTN.Size = new System.Drawing.Size(100, 28);
             this.saveAcctInfo_BTN.TabIndex = 87;
@@ -275,7 +255,7 @@
             // 
             this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.Location = new System.Drawing.Point(4, 4);
-            this.backButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backButton.Margin = new System.Windows.Forms.Padding(4);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(100, 28);
             this.backButton.TabIndex = 89;
@@ -311,8 +291,6 @@
             this.Controls.Add(this.backButton);
             this.Controls.Add(this.cardTypeDropBox);
             this.Controls.Add(this.saveAcctInfo_BTN);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.phone_TXT);
             this.Controls.Add(this.label7);
@@ -332,7 +310,7 @@
             this.Controls.Add(this.paymentType_LBL);
             this.Controls.Add(this.carNum_LBL);
             this.Controls.Add(this.cardNum_TXT);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UpdateAccountInfo";
             this.Text = "UpdateAccountInfo";
             this.Load += new System.EventHandler(this.UpdateAccountInfo_Load);
@@ -343,7 +321,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox phone_TXT;
         private System.Windows.Forms.Label label7;
@@ -363,7 +340,6 @@
         private System.Windows.Forms.Label paymentType_LBL;
         private System.Windows.Forms.Label carNum_LBL;
         private System.Windows.Forms.TextBox cardNum_TXT;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button saveAcctInfo_BTN;
         private System.Windows.Forms.ComboBox cardTypeDropBox;
         private System.Windows.Forms.Button backButton;
