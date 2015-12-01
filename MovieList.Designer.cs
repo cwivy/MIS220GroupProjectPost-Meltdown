@@ -33,9 +33,6 @@
             this.checkOut_BTN = new System.Windows.Forms.Button();
             this.returnTo_BOX = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.movieRentalDataSet = new MIS220GroupProject.MovieRentalDataSet();
-            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.movieTableAdapter = new MIS220GroupProject.MovieRentalDataSetTableAdapters.MovieTableAdapter();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.genreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.releaseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +40,13 @@
             this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.daysForRentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movieRentalDataSet = new MIS220GroupProject.MovieRentalDataSet();
+            this.movieTableAdapter = new MIS220GroupProject.MovieRentalDataSetTableAdapters.MovieTableAdapter();
             this.sortBy_DropBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // wishList_BTN
@@ -57,6 +57,7 @@
             this.wishList_BTN.TabIndex = 1;
             this.wishList_BTN.Text = "Add to Wish List";
             this.wishList_BTN.UseVisualStyleBackColor = true;
+            this.wishList_BTN.Click += new System.EventHandler(this.wishList_BTN_Click);
             // 
             // checkOut_BTN
             // 
@@ -106,20 +107,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // movieRentalDataSet
-            // 
-            this.movieRentalDataSet.DataSetName = "MovieRentalDataSet";
-            this.movieRentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // movieBindingSource
-            // 
-            this.movieBindingSource.DataMember = "Movie";
-            this.movieBindingSource.DataSource = this.movieRentalDataSet;
-            // 
-            // movieTableAdapter
-            // 
-            this.movieTableAdapter.ClearBeforeFill = true;
-            // 
             // titleDataGridViewTextBoxColumn
             // 
             this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
@@ -162,6 +149,20 @@
             this.rentalPriceDataGridViewTextBoxColumn.HeaderText = "RentalPrice";
             this.rentalPriceDataGridViewTextBoxColumn.Name = "rentalPriceDataGridViewTextBoxColumn";
             // 
+            // movieBindingSource
+            // 
+            this.movieBindingSource.DataMember = "Movie";
+            this.movieBindingSource.DataSource = this.movieRentalDataSet;
+            // 
+            // movieRentalDataSet
+            // 
+            this.movieRentalDataSet.DataSetName = "MovieRentalDataSet";
+            this.movieRentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // movieTableAdapter
+            // 
+            this.movieTableAdapter.ClearBeforeFill = true;
+            // 
             // sortBy_DropBox
             // 
             this.sortBy_DropBox.FormattingEnabled = true;
@@ -188,8 +189,8 @@
             this.Text = "MovieList";
             this.Load += new System.EventHandler(this.MovieList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
