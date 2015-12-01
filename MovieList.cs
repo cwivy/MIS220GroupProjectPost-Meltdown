@@ -51,12 +51,5 @@ namespace MIS220GroupProject
         //        MessageBox.Show(ex.Message);
         //    }
         }
-
-        private void MovieList_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'movieRentalDataSet.Movie' table. You can move, or remove it, as needed.
-            this.movieTableAdapter.Fill(this.movieRentalDataSet.Movie);
-
-        }
     }
 }
