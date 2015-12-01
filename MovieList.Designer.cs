@@ -28,22 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
             this.wishList_BTN = new System.Windows.Forms.Button();
             this.checkOut_BTN = new System.Windows.Forms.Button();
             this.returnTo_BOX = new System.Windows.Forms.ComboBox();
             this.sortBy_BOX = new System.Windows.Forms.ComboBox();
+            this.movieRentalDataSet = new MIS220GroupProject.MovieRentalDataSet();
+            this.movieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.movieTableAdapter = new MIS220GroupProject.MovieRentalDataSetTableAdapters.MovieTableAdapter();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.releaseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.runTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ratingDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.daysForRentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 54);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(549, 212);
-            this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // wishList_BTN
             // 
@@ -88,28 +92,117 @@
             this.sortBy_BOX.TabIndex = 4;
             this.sortBy_BOX.Text = "Sort By:";
             // 
+            // movieRentalDataSet
+            // 
+            this.movieRentalDataSet.DataSetName = "MovieRentalDataSet";
+            this.movieRentalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // movieBindingSource
+            // 
+            this.movieBindingSource.DataMember = "Movie";
+            this.movieBindingSource.DataSource = this.movieRentalDataSet;
+            // 
+            // movieTableAdapter
+            // 
+            this.movieTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.titleDataGridViewTextBoxColumn,
+            this.genreDataGridViewTextBoxColumn,
+            this.releaseDateDataGridViewTextBoxColumn,
+            this.runTimeDataGridViewTextBoxColumn,
+            this.ratingDataGridViewTextBoxColumn,
+            this.daysForRentDataGridViewTextBoxColumn,
+            this.rentalPriceDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.movieBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(29, 24);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(743, 268);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            // 
+            // genreDataGridViewTextBoxColumn
+            // 
+            this.genreDataGridViewTextBoxColumn.DataPropertyName = "Genre";
+            this.genreDataGridViewTextBoxColumn.HeaderText = "Genre";
+            this.genreDataGridViewTextBoxColumn.Name = "genreDataGridViewTextBoxColumn";
+            // 
+            // releaseDateDataGridViewTextBoxColumn
+            // 
+            this.releaseDateDataGridViewTextBoxColumn.DataPropertyName = "ReleaseDate";
+            this.releaseDateDataGridViewTextBoxColumn.HeaderText = "ReleaseDate";
+            this.releaseDateDataGridViewTextBoxColumn.Name = "releaseDateDataGridViewTextBoxColumn";
+            // 
+            // runTimeDataGridViewTextBoxColumn
+            // 
+            this.runTimeDataGridViewTextBoxColumn.DataPropertyName = "RunTime";
+            this.runTimeDataGridViewTextBoxColumn.HeaderText = "RunTime";
+            this.runTimeDataGridViewTextBoxColumn.Name = "runTimeDataGridViewTextBoxColumn";
+            // 
+            // ratingDataGridViewTextBoxColumn
+            // 
+            this.ratingDataGridViewTextBoxColumn.DataPropertyName = "Rating";
+            this.ratingDataGridViewTextBoxColumn.HeaderText = "Rating";
+            this.ratingDataGridViewTextBoxColumn.Name = "ratingDataGridViewTextBoxColumn";
+            // 
+            // daysForRentDataGridViewTextBoxColumn
+            // 
+            this.daysForRentDataGridViewTextBoxColumn.DataPropertyName = "DaysForRent";
+            this.daysForRentDataGridViewTextBoxColumn.HeaderText = "DaysForRent";
+            this.daysForRentDataGridViewTextBoxColumn.Name = "daysForRentDataGridViewTextBoxColumn";
+            // 
+            // rentalPriceDataGridViewTextBoxColumn
+            // 
+            this.rentalPriceDataGridViewTextBoxColumn.DataPropertyName = "RentalPrice";
+            this.rentalPriceDataGridViewTextBoxColumn.HeaderText = "RentalPrice";
+            this.rentalPriceDataGridViewTextBoxColumn.Name = "rentalPriceDataGridViewTextBoxColumn";
+            // 
             // MovieList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 423);
+            this.ClientSize = new System.Drawing.Size(842, 444);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.sortBy_BOX);
             this.Controls.Add(this.returnTo_BOX);
             this.Controls.Add(this.checkOut_BTN);
             this.Controls.Add(this.wishList_BTN);
-            this.Controls.Add(this.listBox1);
             this.Name = "MovieList";
             this.Text = "MovieList";
+            this.Load += new System.EventHandler(this.MovieList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.movieRentalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button wishList_BTN;
         private System.Windows.Forms.Button checkOut_BTN;
         private System.Windows.Forms.ComboBox returnTo_BOX;
         private System.Windows.Forms.ComboBox sortBy_BOX;
+        private MovieRentalDataSet movieRentalDataSet;
+        private System.Windows.Forms.BindingSource movieBindingSource;
+        private MovieRentalDataSetTableAdapters.MovieTableAdapter movieTableAdapter;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn releaseDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn runTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ratingDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn daysForRentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rentalPriceDataGridViewTextBoxColumn;
     }
 }

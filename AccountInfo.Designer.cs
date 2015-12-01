@@ -262,6 +262,7 @@
             this.save_BTN.TabIndex = 41;
             this.save_BTN.Text = "Save";
             this.save_BTN.UseVisualStyleBackColor = true;
+            this.save_BTN.Click += new System.EventHandler(this.save_BTN_Click);
             // 
             // activeOrders_BTN
             // 
@@ -361,6 +362,7 @@
             this.Controls.Add(this.cardNum_TXT);
             this.Name = "AccountInfo";
             this.Text = "AccountInfo";
+            this.Load += new System.EventHandler(this.AccountInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
