@@ -14,14 +14,18 @@ namespace MIS220GroupProject
 {
     public partial class MovieList : Form
     {
-        int memID;
-        int accID;
         string title;
+        AggActiveAccount profile;
+
+        public MovieList(AggActiveAccount prof)
+        {
+            InitializeComponent();
+            profile = prof;
+        }
 
         public string Title
         {
             get {  return title; }
-
             set  { title = value;}
         }
 
@@ -62,7 +66,7 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 0)
             {
                 this.Hide();
-                MemberHome frm = new MemberHome(memID, accID);
+                MemberHome frm = new MemberHome(profile);
                 frm.Show();
                 
             }
@@ -75,7 +79,7 @@ namespace MIS220GroupProject
             if(returnTo_BOX.SelectedIndex == 2)
             {
                 this.Hide();
-                AccountInfo frm = new AccountInfo();
+                AccountInfo frm = new AccountInfo(profile);
                 frm.Show();
             }
         }

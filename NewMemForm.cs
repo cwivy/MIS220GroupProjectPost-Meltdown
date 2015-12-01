@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MIS220GroupProject
 {
-    public partial class NewMemForm : Form
+    public partial class NewMemForm : Form 
     {
         //member variables
         private int id;
@@ -49,20 +49,7 @@ namespace MIS220GroupProject
 
         //----------Methods--------------
         //private void CopyFormToObject()
-        //{
-        //    thisAGG.FName = firstNameBox.Text.ToString();
-        //    thisAGG.LName = lastNameBox.Text.ToString();
-        //    thisAGG.DateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
-        //    thisAGG.Address1 = address1Box.Text.ToString();
-        //    thisAGG.Address2 = address2Box.Text.ToString();
-        //    thisAGG.City = cityBox.Text.ToString();
-        //    thisAGG.State = stateComboBox.Text.ToString();
-        //    thisAGG.Zip = Convert.ToInt32(zipBox.Text);
-        //    thisAGG.Phone = Convert.ToString(phoneNumBox);
-        //    thisAGG.Username = userNameBox.Text;
-        //    thisAGG.Password = passwordBox.Text;
-        //}
-
+        
         private void ClearTextBoxes()
         {
             firstNameBox.Text = " ";
@@ -104,7 +91,7 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(dateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
+            AggActiveAccount.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
             this.Hide();
@@ -116,6 +103,13 @@ namespace MIS220GroupProject
             //set combo box as a drop down style so input could be controlled to desired responses
             //see list of options in form design by clicking on 'edit items' in properties description
             cardTypeDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void stateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //set combo box as a drop down style so input could be controlled to desired responses
+            //see list of options in form design by clicking on 'edit items' in properties description
+            stateComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

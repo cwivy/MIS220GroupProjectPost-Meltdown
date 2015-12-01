@@ -79,6 +79,7 @@
             this.toMovieList_BTN.TabIndex = 3;
             this.toMovieList_BTN.Text = "View and Order Movies!";
             this.toMovieList_BTN.UseVisualStyleBackColor = true;
+            this.toMovieList_BTN.Click += new System.EventHandler(this.toMovieList_BTN_Click);
             // 
             // toAcctInfoScreen_BTN
             // 
@@ -88,6 +89,7 @@
             this.toAcctInfoScreen_BTN.TabIndex = 4;
             this.toAcctInfoScreen_BTN.Text = "Account Info";
             this.toAcctInfoScreen_BTN.UseVisualStyleBackColor = true;
+            this.toAcctInfoScreen_BTN.Click += new System.EventHandler(this.toAcctInfoScreen_BTN_Click);
             // 
             // toWishlist_BTN
             // 
