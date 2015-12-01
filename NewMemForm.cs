@@ -91,7 +91,7 @@ namespace MIS220GroupProject
             string DOBString = Convert.ToString(dateOfBirth);
             DOBString = DOBString.Substring(0, 10);
 
-            thisAGG.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
+            AggActiveAccount.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
             ClearTextBoxes();
             MessageBox.Show("You have successfully created an account!");
             this.Hide();

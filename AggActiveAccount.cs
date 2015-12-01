@@ -155,7 +155,7 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
-        public void CreateNewProfile(string cardNumber, string paymentType, string fName, string lName, string dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string userName, string password)
+        public static void CreateNewProfile(string cardNumber, string paymentType, string fName, string lName, string dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string userName, string password)
         {           
             //SQL Statement for creating new member
             string sqlProfileCreate =
@@ -259,13 +259,13 @@ namespace MIS220GroupProject
             this.MemStatus = Convert.ToString(data["MemStatus"]);
             this.Balance = Convert.ToDouble(Convert.ToString(data["Balance"]));
             this.CardNum = Convert.ToInt64(Convert.ToString(data["CardNumber"]));
-            this.PaymentType = Convert.ToInt32(Convert.ToString(data["PaymentType"]));
+            this.PaymentType = Convert.ToInt32(data["PaymentType"]);
 
             //Populating Login Members
             this.Username = Convert.ToString(data["Username"]);
             this.MemberID = Convert.ToInt32(Convert.ToString(data["MemberID"]));
             this.Password = Convert.ToString(data["Password"]);
-            int buff = Convert.ToInt32(Convert.ToString(data["IsAdmin"]));
+            int buff = Convert.ToInt32(data["IsAdmin"]);
             if (buff == 1)
                 this.IsAdmin = true;
             if (buff == 0)

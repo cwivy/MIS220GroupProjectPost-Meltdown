@@ -18,6 +18,7 @@ namespace MIS220GroupProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginScreen());
+            
         }
     }
 
