@@ -34,7 +34,6 @@
             this.toMovieList_BTN = new System.Windows.Forms.Button();
             this.toAcctInfoScreen_BTN = new System.Windows.Forms.Button();
             this.toWishlist_BTN = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.toPaymentScreen_BTN = new System.Windows.Forms.Button();
             this.toRewardScreen_BTN = new System.Windows.Forms.Button();
             this.memNameBox = new System.Windows.Forms.RichTextBox();
@@ -54,7 +53,7 @@
             this.accBalBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.accBalBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accBalBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.accBalBox.Location = new System.Drawing.Point(330, 25);
+            this.accBalBox.Location = new System.Drawing.Point(296, 25);
             this.accBalBox.Name = "accBalBox";
             this.accBalBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.accBalBox.Size = new System.Drawing.Size(149, 76);
@@ -64,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(330, 6);
+            this.label2.Location = new System.Drawing.Point(296, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 13);
             this.label2.TabIndex = 2;
@@ -73,7 +72,7 @@
             // toMovieList_BTN
             // 
             this.toMovieList_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toMovieList_BTN.Location = new System.Drawing.Point(12, 354);
+            this.toMovieList_BTN.Location = new System.Drawing.Point(35, 149);
             this.toMovieList_BTN.Name = "toMovieList_BTN";
             this.toMovieList_BTN.Size = new System.Drawing.Size(206, 73);
             this.toMovieList_BTN.TabIndex = 3;
@@ -93,21 +92,12 @@
             // 
             // toWishlist_BTN
             // 
-            this.toWishlist_BTN.Location = new System.Drawing.Point(239, 354);
+            this.toWishlist_BTN.Location = new System.Drawing.Point(258, 149);
             this.toWishlist_BTN.Name = "toWishlist_BTN";
             this.toWishlist_BTN.Size = new System.Drawing.Size(102, 32);
             this.toWishlist_BTN.TabIndex = 5;
             this.toWishlist_BTN.Text = "See Wishlist";
             this.toWishlist_BTN.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Top Three Movies: ";
             // 
             // toPaymentScreen_BTN
             // 
@@ -121,7 +111,7 @@
             // 
             // toRewardScreen_BTN
             // 
-            this.toRewardScreen_BTN.Location = new System.Drawing.Point(239, 392);
+            this.toRewardScreen_BTN.Location = new System.Drawing.Point(258, 187);
             this.toRewardScreen_BTN.Name = "toRewardScreen_BTN";
             this.toRewardScreen_BTN.Size = new System.Drawing.Size(102, 35);
             this.toRewardScreen_BTN.TabIndex = 8;
@@ -143,11 +133,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 443);
+            this.ClientSize = new System.Drawing.Size(501, 264);
             this.Controls.Add(this.memNameBox);
             this.Controls.Add(this.toRewardScreen_BTN);
             this.Controls.Add(this.toPaymentScreen_BTN);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.toWishlist_BTN);
             this.Controls.Add(this.toAcctInfoScreen_BTN);
             this.Controls.Add(this.toMovieList_BTN);
@@ -169,7 +158,6 @@
         private System.Windows.Forms.Button toMovieList_BTN;
         private System.Windows.Forms.Button toAcctInfoScreen_BTN;
         private System.Windows.Forms.Button toWishlist_BTN;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button toPaymentScreen_BTN;
         private System.Windows.Forms.Button toRewardScreen_BTN;
         private System.Windows.Forms.RichTextBox memNameBox;

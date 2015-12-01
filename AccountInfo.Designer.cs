@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.billingHistory_BTN = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.phone_TXT = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.firstName_TXT = new System.Windows.Forms.TextBox();
             this.updateAccount_BTN = new System.Windows.Forms.Button();
-            this.activeOrders_BTN = new System.Windows.Forms.Button();
             this.paymentType_LBL = new System.Windows.Forms.Label();
             this.memStatus_LBL = new System.Windows.Forms.Label();
             this.carNum_LBL = new System.Windows.Forms.Label();
@@ -57,16 +55,6 @@
             this.birthDate_TXT = new System.Windows.Forms.TextBox();
             this.backToHome_BTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // billingHistory_BTN
-            // 
-            this.billingHistory_BTN.Location = new System.Drawing.Point(257, 238);
-            this.billingHistory_BTN.Margin = new System.Windows.Forms.Padding(2);
-            this.billingHistory_BTN.Name = "billingHistory_BTN";
-            this.billingHistory_BTN.Size = new System.Drawing.Size(123, 62);
-            this.billingHistory_BTN.TabIndex = 62;
-            this.billingHistory_BTN.Text = "Billing History";
-            this.billingHistory_BTN.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -241,7 +229,7 @@
             // 
             // updateAccount_BTN
             // 
-            this.updateAccount_BTN.Location = new System.Drawing.Point(398, 238);
+            this.updateAccount_BTN.Location = new System.Drawing.Point(368, 231);
             this.updateAccount_BTN.Margin = new System.Windows.Forms.Padding(2);
             this.updateAccount_BTN.Name = "updateAccount_BTN";
             this.updateAccount_BTN.Size = new System.Drawing.Size(123, 62);
@@ -249,16 +237,6 @@
             this.updateAccount_BTN.Text = "Update Account Information";
             this.updateAccount_BTN.UseVisualStyleBackColor = true;
             this.updateAccount_BTN.Click += new System.EventHandler(this.updateAccount_BTN_Click);
-            // 
-            // activeOrders_BTN
-            // 
-            this.activeOrders_BTN.Location = new System.Drawing.Point(118, 238);
-            this.activeOrders_BTN.Margin = new System.Windows.Forms.Padding(2);
-            this.activeOrders_BTN.Name = "activeOrders_BTN";
-            this.activeOrders_BTN.Size = new System.Drawing.Size(123, 62);
-            this.activeOrders_BTN.TabIndex = 40;
-            this.activeOrders_BTN.Text = "Active Orders";
-            this.activeOrders_BTN.UseVisualStyleBackColor = true;
             // 
             // paymentType_LBL
             // 
@@ -346,7 +324,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(627, 327);
             this.Controls.Add(this.backToHome_BTN);
-            this.Controls.Add(this.billingHistory_BTN);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.birthDate_TXT);
             this.Controls.Add(this.label8);
@@ -366,7 +343,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.firstName_TXT);
             this.Controls.Add(this.updateAccount_BTN);
-            this.Controls.Add(this.activeOrders_BTN);
             this.Controls.Add(this.paymentType_LBL);
             this.Controls.Add(this.memStatus_LBL);
             this.Controls.Add(this.carNum_LBL);
@@ -383,7 +359,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button billingHistory_BTN;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox phone_TXT;
@@ -402,7 +377,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox firstName_TXT;
         private System.Windows.Forms.Button updateAccount_BTN;
-        private System.Windows.Forms.Button activeOrders_BTN;
         private System.Windows.Forms.Label paymentType_LBL;
         private System.Windows.Forms.Label memStatus_LBL;
         private System.Windows.Forms.Label carNum_LBL;

@@ -25,49 +25,16 @@ namespace MIS220GroupProject
 
         public void CopyObject2Form(AggActiveAccount profile)
         {
-            accBalBox2.Text = profile.Balance.ToString();
+            accBalBox2.Text = "$" + profile.Balance.ToString();
         }
 
         private void submitButt_Click(object sender, EventArgs e)
         {
             profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
+            //string sqlQuery = "UPDATE Account.Balance("profile.Balance") WHERE ";
+
             CopyObject2Form(profile);
-            //char transaction = ' ';
-            //check to see which radio button is selected
-            //if (radioPaymentButton.Checked)
-            //{
-            //    transaction = 'p';//make a payment from balance
-            //}
-
-            //switch (transaction)
-            //{
-            //    case 'p':
-            //        if (validateTextBox())
-            //        {
-            //            double payment = Convert.ToDouble(makeAPaymentBox.Text);
-            //            makeAPaymentTrans(payment);
-            //            displayBal();
-            //        }
-            //        else
-            //        {
-            //            errorMessage();
-            //        }
-            //        break;
-            //    default:
-            //        MessageBox.Show("Select A Transaction");
-            //        break;
-            //}
-        }
-
-        private void errorMessage()
-        {
-            MessageBox.Show("Invalid entry, please enter a valid ammount!");
-        }
-
-        //display account balance
-        private void displayBal()
-        {
-            accBalBox2.Text = "$" + balance.ToString();
+            
         }
 
         private void makeAPaymentTrans(double p)
