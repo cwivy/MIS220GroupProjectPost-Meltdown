@@ -73,29 +73,8 @@ namespace MIS220GroupProject
         private void errorMessage()
         {
             MessageBox.Show("Invalid entry, please enter a valid ammount!");
-        }
-
-        //display account balance
-        private void displayBal()
-        {
-            accBalBox2.Text = "$" + balance.ToString();
-        }
-
-        private void makeAPaymentTrans(double p)
-        {
-            //balance += p;
-            if (balance - p >= 0)
-            {
-                balance -= p;
-            }
-            else
-            {
-                balance -= p;
-            }
-        }
-
-        //will return true if user enters a valid number
-
+        }        
+        
         private void backToHome_BTN_Click(object sender, EventArgs e)
         {
             this.Hide();
