@@ -44,5 +44,11 @@ namespace MIS220GroupProject
             UpdateAccountInfo form = new UpdateAccountInfo(profile);
             this.Hide();
         }
+
+        private void backToHome_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MemberHome form = new MemberHome(profile);
+        }
     }
 }
