@@ -59,7 +59,7 @@
             // loginUserBox
             // 
             this.loginUserBox.Location = new System.Drawing.Point(164, 91);
-            this.loginUserBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginUserBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginUserBox.Name = "loginUserBox";
             this.loginUserBox.Size = new System.Drawing.Size(76, 20);
             this.loginUserBox.TabIndex = 1;
@@ -67,8 +67,9 @@
             // loginPassBox
             // 
             this.loginPassBox.Location = new System.Drawing.Point(164, 112);
-            this.loginPassBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginPassBox.Margin = new System.Windows.Forms.Padding(2);
             this.loginPassBox.Name = "loginPassBox";
+            this.loginPassBox.PasswordChar = '*';
             this.loginPassBox.Size = new System.Drawing.Size(76, 20);
             this.loginPassBox.TabIndex = 2;
             // 

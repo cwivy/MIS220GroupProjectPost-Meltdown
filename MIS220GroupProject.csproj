@@ -71,6 +71,12 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeAPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeAPayment.Designer.cs">
+      <DependentUpon>MakeAPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MemberBackgroundForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeAPayment.resx">
+      <DependentUpon>MakeAPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MemberBackgroundForm.resx">
       <DependentUpon>MemberBackgroundForm.cs</DependentUpon>

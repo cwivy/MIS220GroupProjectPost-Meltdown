@@ -52,7 +52,7 @@
             // accBalBox
             // 
             this.accBalBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.accBalBox.Font = new System.Drawing.Font("Segoe WP", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accBalBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accBalBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.accBalBox.Location = new System.Drawing.Point(330, 25);
             this.accBalBox.Name = "accBalBox";
@@ -117,6 +117,7 @@
             this.toPaymentScreen_BTN.TabIndex = 7;
             this.toPaymentScreen_BTN.Text = "Make a Payment";
             this.toPaymentScreen_BTN.UseVisualStyleBackColor = true;
+            this.toPaymentScreen_BTN.Click += new System.EventHandler(this.toPaymentScreen_BTN_Click);
             // 
             // toRewardScreen_BTN
             // 
@@ -131,7 +132,7 @@
             // 
             this.memNameBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.memNameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.memNameBox.Font = new System.Drawing.Font("Segoe WP", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.memNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memNameBox.Location = new System.Drawing.Point(69, 25);
             this.memNameBox.Name = "memNameBox";
             this.memNameBox.Size = new System.Drawing.Size(130, 31);

@@ -81,15 +81,15 @@ namespace MIS220GroupProject
             city = cityBox.Text;
             state = stateComboBox.Text;
             zip = Convert.ToInt32(zipBox.Text);
-            dateOfBirth = Convert.ToDateTime(DOBDateTimePicker.Text);
+            dateOfBirth = DOBDateTimePicker.Value;
             //login info
             username = userNameBox.Text;
             password = passwordBox.Text;
 
             string cardNumString = Convert.ToString(cardNum);
             string paymentTypeString = Convert.ToString(paymentType);
-            string DOBString = Convert.ToString(dateOfBirth);
-            DOBString = DOBString.Substring(0, 10);
+            DateTime DOBString = dateOfBirth;
+            //DOBString = DOBString.Substring(0, 10);
 
             AggActiveAccount.CreateNewProfile(cardNumString, paymentTypeString, fName, lName, DOBString, address1, address2, city, state, zip, phone, username, password);
             ClearTextBoxes();
