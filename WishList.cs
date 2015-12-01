@@ -16,14 +16,12 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile = new AggActiveAccount();
 
-        public WishList()
-        AggActiveAccount profile;
-
+        public WishList(AggActiveAccount prof)
         {
             InitializeComponent();
             this.Show();
-            profile = mem;
-            CopyObject2Form(profile);
+            profile = prof;
+            //CopyObject2Form(profile);
         }
 
         private void WishList_Load(object sender, EventArgs e)
