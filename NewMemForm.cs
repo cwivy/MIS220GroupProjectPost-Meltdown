@@ -117,5 +117,12 @@ namespace MIS220GroupProject
             //see list of options in form design by clicking on 'edit items' in properties description
             cardTypeDropBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void stateComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //set combo box as a drop down style so input could be controlled to desired responses
+            //see list of options in form design by clicking on 'edit items' in properties description
+            stateComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
     }
 }

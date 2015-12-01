@@ -353,6 +353,7 @@
             this.stateComboBox.Name = "stateComboBox";
             this.stateComboBox.Size = new System.Drawing.Size(121, 24);
             this.stateComboBox.TabIndex = 30;
+            this.stateComboBox.SelectedIndexChanged += new System.EventHandler(this.stateComboBox_SelectedIndexChanged);
             // 
             // NewMemForm
             // 
