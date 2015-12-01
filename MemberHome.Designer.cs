@@ -125,7 +125,7 @@
             this.memNameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memNameBox.Location = new System.Drawing.Point(69, 25);
             this.memNameBox.Name = "memNameBox";
-            this.memNameBox.Size = new System.Drawing.Size(130, 31);
+            this.memNameBox.Size = new System.Drawing.Size(172, 31);
             this.memNameBox.TabIndex = 9;
             this.memNameBox.Text = "User Name";
             // 
