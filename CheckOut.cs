@@ -70,13 +70,6 @@ namespace MIS220GroupProject
             {
                 //non-query
                 SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
-                //updating account
-                //cmdIns.Parameters.AddWithValue("@accountID", prof.AccId);
-                //cmdIns.Parameters.AddWithValue("@newBalance", Convert.ToDouble(afterBal_TXT.Text));
-                //new transaction                
-                //cmdIns.Parameters.AddWithValue("@title", movieSelect);
-                //cmdIns.Parameters.AddWithValue("@dueDate", dueDateBox.Text);
-                //cmdIns.Parameters.AddWithValue("@total", moviePrice);
 
                 dbCon.Open();
                 cmdIns.ExecuteNonQuery();
