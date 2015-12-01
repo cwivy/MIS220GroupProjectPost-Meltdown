@@ -49,6 +49,7 @@ namespace MIS220GroupProject
 
         private void RunConfirmOrderSqlStatement(AggActiveAccount prof, string movieSelect, double moviePrice)
         {
+            prof.Balance = Convert.ToDouble(afterBal_TXT.Text);
             //SQL Statement for creating new member
             string sqlProfileCreate =
                 //updating active user account balance by subtracting the movie price (math is already done in copyObjectToForm method)                
