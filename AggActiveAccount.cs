@@ -8,10 +8,10 @@ using System.Data;
 
 namespace MIS220GroupProject
 {
-    class AggActiveAccount 
+    public class AggActiveAccount 
     {
         //member variables
-        private int id;
+        private int memId;
         private string fName;
         private string lName;
         private string address1;
@@ -23,7 +23,7 @@ namespace MIS220GroupProject
         private DateTime dateOfBirth;
         //account variables
         private int accId;
-        private int cardNum;
+        private long cardNum;
         private double balance;
         private List<int> rentalsHeld;
         private string memStatus;
@@ -36,10 +36,10 @@ namespace MIS220GroupProject
         
 
         //member get sets
-        public int Id
+        public int MemId
         {
-            get { return id; }
-            set { id = value; }
+            get { return memId; }
+            set { memId = value; }
         }
 
         public string FName
@@ -101,7 +101,7 @@ namespace MIS220GroupProject
             set { accId = value; }
         }
 
-        public int CardNum
+        public long CardNum
         {
             get { return cardNum; }
             set { cardNum = value; }
@@ -210,7 +210,7 @@ namespace MIS220GroupProject
             }
         }
 
-        public DataSet CreateAggDataTable(string userName, string password)
+        public static DataTable CreateAggDataTable(string userName, string password)
         {//This method pulls all relevant information for the user that logs in
 
             //creating the temp variables to pass the supplied username and password
@@ -218,7 +218,7 @@ namespace MIS220GroupProject
             //passing username and password from for to SQL to find correct member
             " set @userName = '" + userName + "' set @password = '" + password + "'" +
             //selecting account, login, and member information corresponding to the login credentials
-            "SELECT * FROM Login l, Member m, Account a where l.Username = @userName and l.Password = @password and l.MemberID = m.MemID and m.AccountID = a.AccountID;";
+            "SELECT * FROM Login l, Member m, Account a WHERE l.Username = @userName and l.Password = @password and l.MemberID = m.MemID and m.AccountID = a.AccountID;";
 
             //Establishes connection with SQL DB
             string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id =uamis; password=RollTide";
@@ -226,21 +226,51 @@ namespace MIS220GroupProject
 
             try
             {
-                DataSet memberDataSet = new DataSet();
+                DataTable memberTable = new DataTable();
                 using (SqlCommand cmd = new SqlCommand(sqlQuery, dbCon))
                 {
                     cmd.Connection.Open();
-                    DataTable memberTable = new DataTable();
                     memberTable.Load(cmd.ExecuteReader());
-                    //string tableName = "MemberInfoTable";
-                    memberDataSet.Tables.Add(memberTable);
                 }
-                return memberDataSet;
+                return memberTable;
             }
             finally
             {
                 dbCon.Close();
             }
+        }
+
+        public void PopulateProfile(DataRow data)
+        {
+            //Populating Member members
+            this.MemId = Convert.ToInt32(Convert.ToString(data["MemID"]));
+            this.FName = Convert.ToString(data["FirstName"]);
+            this.LName = Convert.ToString(data["LastName"]);
+            this.Address1 = Convert.ToString(data["Address1"]);
+            this.Address2 = Convert.ToString(data["Address2"]);
+            this.Phone = Convert.ToString(data["Phone"]);
+            this.City = Convert.ToString(data["City"]);
+            this.State = Convert.ToString(data["State"]);
+            this.zip = Convert.ToInt32(Convert.ToString(data["Zip"]));
+            this.dateOfBirth = Convert.ToDateTime(data["DOB"]);
+
+            //Populating Account members
+            this.AccId = Convert.ToInt32(Convert.ToString(data["AccountID"]));
+            this.MemStatus = Convert.ToString(data["MemStatus"]);
+            this.Balance = Convert.ToDouble(Convert.ToString(data["Balance"]));
+            this.CardNum = Convert.ToInt64(Convert.ToString(data["CardNumber"]));
+            this.PaymentType = Convert.ToInt32(Convert.ToString(data["PaymentType"]));
+
+            //Populating Login Members
+            this.Username = Convert.ToString(data["Username"]);
+            this.MemberID = Convert.ToInt32(Convert.ToString(data["MemberID"]));
+            this.Password = Convert.ToString(data["Password"]);
+            int buff = Convert.ToInt32(Convert.ToString(data["IsAdmin"]));
+            if (buff == 1)
+                this.IsAdmin = true;
+            if (buff == 0)
+                this.IsAdmin = false;
+
         }
     
     }
