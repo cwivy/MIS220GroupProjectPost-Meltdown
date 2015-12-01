@@ -31,12 +31,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.accBalBox2 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.makeAPaymentBox = new System.Windows.Forms.TextBox();
             this.submitButt = new System.Windows.Forms.Button();
-            this.clearButt = new System.Windows.Forms.Button();
-            this.goBackButt = new System.Windows.Forms.Button();
-            this.radioPaymentButton = new System.Windows.Forms.RadioButton();
             this.backToHome_BTN = new System.Windows.Forms.Button();
+            this.paymentUpDown = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -63,58 +61,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 65);
+            this.label1.Location = new System.Drawing.Point(47, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Make A Payment:";
             // 
-            // makeAPaymentBox
-            // 
-            this.makeAPaymentBox.Location = new System.Drawing.Point(147, 62);
-            this.makeAPaymentBox.Name = "makeAPaymentBox";
-            this.makeAPaymentBox.Size = new System.Drawing.Size(114, 20);
-            this.makeAPaymentBox.TabIndex = 8;
-            this.makeAPaymentBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // submitButt
             // 
-            this.submitButt.Location = new System.Drawing.Point(48, 154);
+            this.submitButt.Location = new System.Drawing.Point(155, 89);
             this.submitButt.Name = "submitButt";
             this.submitButt.Size = new System.Drawing.Size(109, 23);
             this.submitButt.TabIndex = 9;
             this.submitButt.Text = "Submit Payment";
             this.submitButt.UseVisualStyleBackColor = true;
             this.submitButt.Click += new System.EventHandler(this.submitButt_Click);
-            // 
-            // clearButt
-            // 
-            this.clearButt.Location = new System.Drawing.Point(167, 154);
-            this.clearButt.Name = "clearButt";
-            this.clearButt.Size = new System.Drawing.Size(109, 23);
-            this.clearButt.TabIndex = 10;
-            this.clearButt.Text = "Clear";
-            this.clearButt.UseVisualStyleBackColor = true;
-            this.clearButt.Click += new System.EventHandler(this.clearButt_Click);
-            // 
-            // goBackButt
-            // 
-            this.goBackButt.Location = new System.Drawing.Point(282, 154);
-            this.goBackButt.Name = "goBackButt";
-            this.goBackButt.Size = new System.Drawing.Size(109, 23);
-            this.goBackButt.TabIndex = 11;
-            this.goBackButt.Text = "Go Back";
-            this.goBackButt.UseVisualStyleBackColor = true;
-            // 
-            // radioPaymentButton
-            // 
-            this.radioPaymentButton.AutoSize = true;
-            this.radioPaymentButton.Location = new System.Drawing.Point(30, 65);
-            this.radioPaymentButton.Name = "radioPaymentButton";
-            this.radioPaymentButton.Size = new System.Drawing.Size(14, 13);
-            this.radioPaymentButton.TabIndex = 12;
-            this.radioPaymentButton.TabStop = true;
-            this.radioPaymentButton.UseVisualStyleBackColor = true;
             // 
             // backToHome_BTN
             // 
@@ -127,22 +88,33 @@
             this.backToHome_BTN.UseVisualStyleBackColor = true;
             this.backToHome_BTN.Click += new System.EventHandler(this.backToHome_BTN_Click);
             // 
+            // paymentUpDown
+            // 
+            this.paymentUpDown.DecimalPlaces = 2;
+            this.paymentUpDown.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.paymentUpDown.Location = new System.Drawing.Point(144, 63);
+            this.paymentUpDown.Name = "paymentUpDown";
+            this.paymentUpDown.Size = new System.Drawing.Size(120, 20);
+            this.paymentUpDown.TabIndex = 66;
+            // 
             // MakeAPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 209);
+            this.ClientSize = new System.Drawing.Size(455, 137);
+            this.Controls.Add(this.paymentUpDown);
             this.Controls.Add(this.backToHome_BTN);
-            this.Controls.Add(this.radioPaymentButton);
-            this.Controls.Add(this.goBackButt);
-            this.Controls.Add(this.clearButt);
             this.Controls.Add(this.submitButt);
-            this.Controls.Add(this.makeAPaymentBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.accBalBox2);
             this.Name = "MakeAPayment";
             this.Text = "MakeAPayment";
+            ((System.ComponentModel.ISupportInitialize)(this.paymentUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,11 +125,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox accBalBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox makeAPaymentBox;
         private System.Windows.Forms.Button submitButt;
-        private System.Windows.Forms.Button clearButt;
-        private System.Windows.Forms.Button goBackButt;
-        private System.Windows.Forms.RadioButton radioPaymentButton;
         private System.Windows.Forms.Button backToHome_BTN;
+        private System.Windows.Forms.NumericUpDown paymentUpDown;
     }
 }

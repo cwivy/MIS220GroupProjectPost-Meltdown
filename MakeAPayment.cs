@@ -23,41 +23,44 @@ namespace MIS220GroupProject
         {
             InitializeComponent();
             profile = prof;
+            CopyObject2Form(profile);
             this.Show();
         }
 
-        private void clearButt_Click(object sender, EventArgs e)
+        public void CopyObject2Form(AggActiveAccount profile)
         {
-            makeAPaymentBox.Clear();
+            accBalBox2.Text = profile.Balance.ToString();
         }
 
         private void submitButt_Click(object sender, EventArgs e)
         {
-            char transaction = ' ';
+            profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
+            CopyObject2Form(profile);
+            //char transaction = ' ';
             //check to see which radio button is selected
-            if (radioPaymentButton.Checked)
-            {
-                transaction = 'p';//make a payment from balance
-            }
+            //if (radioPaymentButton.Checked)
+            //{
+            //    transaction = 'p';//make a payment from balance
+            //}
 
-            switch (transaction)
-            {
-                case 'p':
-                    if (validateTextBox())
-                    {
-                        double payment = Convert.ToDouble(makeAPaymentBox.Text);
-                        makeAPaymentTrans(payment);
-                        displayBal();
-                    }
-                    else
-                    {
-                        errorMessage();
-                    }
-                    break;
-                default:
-                    MessageBox.Show("Select A Transaction");
-                    break;
-            }
+            //switch (transaction)
+            //{
+            //    case 'p':
+            //        if (validateTextBox())
+            //        {
+            //            double payment = Convert.ToDouble(makeAPaymentBox.Text);
+            //            makeAPaymentTrans(payment);
+            //            displayBal();
+            //        }
+            //        else
+            //        {
+            //            errorMessage();
+            //        }
+            //        break;
+            //    default:
+            //        MessageBox.Show("Select A Transaction");
+            //        break;
+            //}
         }
 
         private void errorMessage()
@@ -85,12 +88,6 @@ namespace MIS220GroupProject
         }
 
         //will return true if user enters a valid number
-        private bool validateTextBox()
-        {
-            double value;
-            return double.TryParse(makeAPaymentBox.Text, out value);
-
-        }
 
         private void backToHome_BTN_Click(object sender, EventArgs e)
         {
