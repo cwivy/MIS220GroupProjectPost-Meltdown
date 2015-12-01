@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace MIS220GroupProject
 {
@@ -36,14 +38,14 @@ namespace MIS220GroupProject
             state_TXT.Text = prof.State;
             zip_TXT.Text = prof.Zip.ToString();
             phone_TXT.Text = prof.Phone;
-            cardNum_TXT.Text = prof.CardNum.ToString();
-            memStatus_TXT.Text = prof.MemStatus;
+            cardNum_TXT.Text = prof.CardNum.ToString();            
             if (prof.PaymentType == 1)
                 cardTypeDropBox.Text = "Credit";
             if (prof.PaymentType == 0)
                 cardTypeDropBox.Text = "Debit";
             //Date joined..?
             dateTimePicker1.Value = prof.DateOfBirth;
+            passwordBox.Text = prof.Password;
         }
 
         public AggActiveAccount CopyForm2Object(AggActiveAccount profile)
@@ -55,8 +57,7 @@ namespace MIS220GroupProject
             profile.City = city_TXT.Text;
             profile.State = state_TXT.Text;
             profile.Zip = Convert.ToInt32(zip_TXT.Text);
-            profile.Phone = phone_TXT.Text;
-            profile.MemStatus = memStatus_TXT.Text;
+            profile.Phone = phone_TXT.Text;            
             profile.CardNum = Convert.ToInt64(cardNum_TXT.Text);
             if (cardTypeDropBox.Text == "Credit")
                 profile.PaymentType = 1;
@@ -69,17 +70,73 @@ namespace MIS220GroupProject
         {
             profile = CopyForm2Object(profile);
             //SQL Stuff to update Account
-
+            UpdateProfileInfo(cardNum_TXT.Text, profile.PaymentType, profile.FName, profile.LName, profile.DateOfBirth, profile.Address1, profile.Address2, profile.City, profile.State, profile.Zip, profile.Phone, profile.Password);
+            
             this.Hide();
             AccountInfo form = new AccountInfo(profile);
             form.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
             AccountInfo form = new AccountInfo(profile);
             this.Hide();
             form.Show();
+        }
+
+        public static void UpdateProfileInfo(string cardNumber, int paymentType, string fName, string lName, DateTime dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string password)
+        {
+            //SQL Statement for updating member info
+            string sqlProfileCreate =
+                //updating account with info provided on form
+                "update Account " +
+                "set CardNumber = @cardNumber, PaymentType = @paymentType " +
+                //updating member info
+                "update Member " +
+                "set FirstName = @firstName, LastName = @lastName, DOB = @DOB, Address1 = @address1, Address2 = @address2, City = @city, State = @state, Zip = @zip, Phone = @phone " +
+                //creates a login with supplied username and password. Admin status is set to 'null' as default
+                "update Login " +
+                "set Password = @password;";
+
+            //Establishes connection with SQL DB
+            string dbStr = "Data Source = mis220.eil-server.cba.ua.edu; Initial Catalog = MovieRental; user id = uamis; password=RollTide";
+            SqlConnection dbCon = new SqlConnection(dbStr);
+
+            try
+            {
+                //non-query
+                SqlCommand cmdIns = new SqlCommand(sqlProfileCreate, dbCon);
+                //update account
+                cmdIns.Parameters.AddWithValue("@cardNumber", cardNumber);
+                cmdIns.Parameters.AddWithValue("@paymentType", paymentType);
+                //update member
+                cmdIns.Parameters.AddWithValue("@firstName", fName);
+                cmdIns.Parameters.AddWithValue("@lastName", lName);
+                cmdIns.Parameters.AddWithValue("@DOB", dateOfBirth);
+                cmdIns.Parameters.AddWithValue("@address1", address1);
+                cmdIns.Parameters.AddWithValue("@address2", address2);
+                cmdIns.Parameters.AddWithValue("@city", city);
+                cmdIns.Parameters.AddWithValue("@state", state);
+                cmdIns.Parameters.AddWithValue("@zip", zip);
+                cmdIns.Parameters.AddWithValue("@phone", phone);
+                //update login
+                cmdIns.Parameters.AddWithValue("@password", password);
+
+                dbCon.Open();
+                cmdIns.ExecuteNonQuery();
+
+                cmdIns.Parameters.Clear();
+                cmdIns.Dispose();
+                cmdIns = null;
+
+            }
+
+            //catch(Exception ex)//need to write exceptions
+            finally
+            {
+                dbCon.Close();
+                
+            }
         }
     }
 }
