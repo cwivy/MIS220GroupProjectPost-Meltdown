@@ -15,6 +15,8 @@ namespace MIS220GroupProject
     public partial class UpdateAccountInfo : Form
     {
         AggActiveAccount profile;
+
+        //Constructor
         public UpdateAccountInfo(AggActiveAccount prof)
         {
             InitializeComponent();

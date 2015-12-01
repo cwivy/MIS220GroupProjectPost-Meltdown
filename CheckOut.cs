@@ -17,6 +17,8 @@ namespace MIS220GroupProject
         string movie;
         double price;
         int rentLength;
+
+        //Constructor
         public Checkout(AggActiveAccount prof, string movieSelect, double moviePrice, int daysForRent)
         {
             InitializeComponent();

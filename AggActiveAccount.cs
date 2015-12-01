@@ -8,6 +8,8 @@ using System.Data;
 
 namespace MIS220GroupProject
 {
+
+    //This class is an aggregate of all the data from SQL pertaining to one user of the program
     public class AggActiveAccount 
     {
         //member variables
@@ -155,6 +157,7 @@ namespace MIS220GroupProject
             set { isAdmin = value; }
         }
 
+        //---------Methods----------
         public static void CreateNewProfile(string cardNumber, string paymentType, string fName, string lName, DateTime dateOfBirth, string address1, string address2, string city, string state, Int32 zip, string phone, string userName, string password)
         {           
             //SQL Statement for creating new member
@@ -210,6 +213,8 @@ namespace MIS220GroupProject
             }
         }
 
+        //CreateAggDataTable and PopulateProfile should be used together in the program
+        //      One retrieves the data from SQL, the other populates an instance of AggActiveAccount for use in the forms of this program
         public static DataTable CreateAggDataTable(string userName, string password)
         {//This method pulls all relevant information for the user that logs in
 

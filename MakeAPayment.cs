@@ -17,6 +17,7 @@ namespace MIS220GroupProject
         AggActiveAccount profile;
         private static double balance = 0;
 
+        //Constructor
         public MakeAPayment(AggActiveAccount prof)
         {
             InitializeComponent();

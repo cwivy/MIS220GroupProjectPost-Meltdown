@@ -98,6 +98,7 @@
             this.toWishlist_BTN.TabIndex = 5;
             this.toWishlist_BTN.Text = "See Wishlist";
             this.toWishlist_BTN.UseVisualStyleBackColor = true;
+            this.toWishlist_BTN.Click += new System.EventHandler(this.toWishlist_BTN_Click);
             // 
             // toPaymentScreen_BTN
             // 

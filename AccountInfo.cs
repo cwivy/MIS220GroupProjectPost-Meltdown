@@ -14,6 +14,7 @@ namespace MIS220GroupProject
     {
         AggActiveAccount profile;
 
+        //Constructor
         public AccountInfo(AggActiveAccount prof)
         {
             InitializeComponent();
