@@ -26,37 +26,14 @@ namespace MIS220GroupProject
         public void CopyObject2Form(AggActiveAccount profile)
         {
             accBalBox2.Text = profile.Balance.ToString();
+            cardNumberBox.Text = profile.CardNum.ToString();
         }
 
         private void submitButt_Click(object sender, EventArgs e)
         {
             profile.Balance -= Convert.ToDouble(paymentUpDown.Text);
             CopyObject2Form(profile);
-            //char transaction = ' ';
-            //check to see which radio button is selected
-            //if (radioPaymentButton.Checked)
-            //{
-            //    transaction = 'p';//make a payment from balance
-            //}
-
-            //switch (transaction)
-            //{
-            //    case 'p':
-            //        if (validateTextBox())
-            //        {
-            //            double payment = Convert.ToDouble(makeAPaymentBox.Text);
-            //            makeAPaymentTrans(payment);
-            //            displayBal();
-            //        }
-            //        else
-            //        {
-            //            errorMessage();
-            //        }
-            //        break;
-            //    default:
-            //        MessageBox.Show("Select A Transaction");
-            //        break;
-            //}
+            
         }
 
         private void errorMessage()
