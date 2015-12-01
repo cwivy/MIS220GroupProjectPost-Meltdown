@@ -53,7 +53,7 @@ namespace MIS220GroupProject
             if (returnTo_BOX.SelectedIndex == 1)
             {
                 this.Hide();
-                MovieList frm = new MovieList(prof);
+                MovieList frm = new MovieList(profile);
                 frm.Show();
             }
             if (returnTo_BOX.SelectedIndex == 2)
