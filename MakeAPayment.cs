@@ -12,15 +12,18 @@ namespace MIS220GroupProject
 {
     public partial class MakeAPayment : Form
     {
+        AggActiveAccount profile;
         private static double balance = 0;
         private static int totalMakePayment = 0;
         private static double totalMakePaymentAmt = 0;
         private static int totalAddBalance = 0;
         private static double totalAddBalanceAmt = 0;
 
-        public MakeAPayment()
+        public MakeAPayment(AggActiveAccount prof)
         {
             InitializeComponent();
+            profile = prof;
+            this.Show();
         }
 
         private void clearButt_Click(object sender, EventArgs e)
@@ -85,6 +88,12 @@ namespace MIS220GroupProject
             double value;
             return double.TryParse(makeAPaymentBox.Text, out value);
 
+        }
+
+        private void backToHome_BTN_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MemberHome form = new MemberHome(profile);
         }
     }
 }

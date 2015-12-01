@@ -42,7 +42,8 @@ namespace MIS220GroupProject
 
         private void toPaymentScreen_BTN_Click(object sender, EventArgs e)
         {
-            MakeAPayment makeAPayment = new MakeAPayment();
+            MakeAPayment makeAPayment = new MakeAPayment(profile);
+            this.Hide();
             makeAPayment.Show();
         }
     }

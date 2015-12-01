@@ -36,6 +36,7 @@
             this.clearButt = new System.Windows.Forms.Button();
             this.goBackButt = new System.Windows.Forms.Button();
             this.radioPaymentButton = new System.Windows.Forms.RadioButton();
+            this.backToHome_BTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -62,7 +63,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 49);
+            this.label1.Location = new System.Drawing.Point(50, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 5;
@@ -70,7 +71,7 @@
             // 
             // makeAPaymentBox
             // 
-            this.makeAPaymentBox.Location = new System.Drawing.Point(140, 46);
+            this.makeAPaymentBox.Location = new System.Drawing.Point(147, 62);
             this.makeAPaymentBox.Name = "makeAPaymentBox";
             this.makeAPaymentBox.Size = new System.Drawing.Size(114, 20);
             this.makeAPaymentBox.TabIndex = 8;
@@ -78,7 +79,7 @@
             // 
             // submitButt
             // 
-            this.submitButt.Location = new System.Drawing.Point(46, 131);
+            this.submitButt.Location = new System.Drawing.Point(48, 154);
             this.submitButt.Name = "submitButt";
             this.submitButt.Size = new System.Drawing.Size(109, 23);
             this.submitButt.TabIndex = 9;
@@ -88,7 +89,7 @@
             // 
             // clearButt
             // 
-            this.clearButt.Location = new System.Drawing.Point(165, 131);
+            this.clearButt.Location = new System.Drawing.Point(167, 154);
             this.clearButt.Name = "clearButt";
             this.clearButt.Size = new System.Drawing.Size(109, 23);
             this.clearButt.TabIndex = 10;
@@ -98,7 +99,7 @@
             // 
             // goBackButt
             // 
-            this.goBackButt.Location = new System.Drawing.Point(280, 131);
+            this.goBackButt.Location = new System.Drawing.Point(282, 154);
             this.goBackButt.Name = "goBackButt";
             this.goBackButt.Size = new System.Drawing.Size(109, 23);
             this.goBackButt.TabIndex = 11;
@@ -108,18 +109,30 @@
             // radioPaymentButton
             // 
             this.radioPaymentButton.AutoSize = true;
-            this.radioPaymentButton.Location = new System.Drawing.Point(23, 49);
+            this.radioPaymentButton.Location = new System.Drawing.Point(30, 65);
             this.radioPaymentButton.Name = "radioPaymentButton";
             this.radioPaymentButton.Size = new System.Drawing.Size(14, 13);
             this.radioPaymentButton.TabIndex = 12;
             this.radioPaymentButton.TabStop = true;
             this.radioPaymentButton.UseVisualStyleBackColor = true;
             // 
+            // backToHome_BTN
+            // 
+            this.backToHome_BTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backToHome_BTN.Location = new System.Drawing.Point(3, 3);
+            this.backToHome_BTN.Name = "backToHome_BTN";
+            this.backToHome_BTN.Size = new System.Drawing.Size(62, 23);
+            this.backToHome_BTN.TabIndex = 65;
+            this.backToHome_BTN.Text = "<-- Home";
+            this.backToHome_BTN.UseVisualStyleBackColor = true;
+            this.backToHome_BTN.Click += new System.EventHandler(this.backToHome_BTN_Click);
+            // 
             // MakeAPayment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 189);
+            this.ClientSize = new System.Drawing.Size(469, 209);
+            this.Controls.Add(this.backToHome_BTN);
             this.Controls.Add(this.radioPaymentButton);
             this.Controls.Add(this.goBackButt);
             this.Controls.Add(this.clearButt);
@@ -145,5 +158,6 @@
         private System.Windows.Forms.Button clearButt;
         private System.Windows.Forms.Button goBackButt;
         private System.Windows.Forms.RadioButton radioPaymentButton;
+        private System.Windows.Forms.Button backToHome_BTN;
     }
 }

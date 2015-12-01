@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 451);
+            this.ClientSize = new System.Drawing.Size(797, 344);
             this.Controls.Add(this.backToHome_BTN);
             this.Controls.Add(this.sortByGenre_DropBox);
             this.Controls.Add(this.movieListDataGrid);
